@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="format-detection" content="telephone=no">
+<title>HIRO 2026 — The 1st International Workshop on Shinosawa Hiro Studies</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<style>
+:root {
+  --color-primary: #48C6DA;
+  --color-primary-dark: #2E9BB0;
+  --color-primary-light: #7CD8E7;
+  --color-primary-bg: #EBF9FC;
+  --color-text: #333;
+  --color-text-light: #666;
+  --color-white: #FFF;
+  --color-border: #E2E8F0;
+  --color-footer: #1A202C;
+  --font-heading: 'Georgia', 'Times New Roman', 'Noto Serif SC', 'SimSun', serif;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Microsoft JhengHei', 'PingFang SC', sans-serif;
+  --max-width: 1100px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-text);
+  background: var(--color-white);
+}
+a { color: var(--color-primary-dark); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--color-primary); }
+img { max-width: 100%; height: auto; display: block; }
+
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+.sr-only-focusable:focus { position: static; width: auto; height: auto; clip: auto; padding: 10px 20px; background: var(--color-primary); color: var(--color-white); z-index: 10000; }
+
+/* Header */
+.page-head { background: var(--color-white); border-bottom: 1px solid var(--color-border); position: sticky; top: 0; z-index: 1000; }
+.header-wrap { max-width: var(--max-width); margin: 0 auto; }
+.header-top { display: flex; align-items: center; justify-content: space-between; padding: 10px 20px; }
+.logo-area { display: flex; align-items: center; gap: 12px; }
+.logo-icon { width: 44px; height: 44px; background: var(--color-primary); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--color-white); font-weight: 700; font-size: 22px; flex-shrink: 0; }
+.logo-text { font-size: 14px; color: var(--color-text-light); line-height: 1.3; }
+.logo-text strong { display: block; font-size: 16px; color: var(--color-text); }
+
+.header-top-right { display: flex; align-items: center; gap: 12px; }
+
+/* Lang switcher */
+.lang-switch { display: flex; border: 1px solid var(--color-border); border-radius: 6px; overflow: hidden; }
+.lang-btn {
+  background: var(--color-white); border: none; padding: 6px 12px; font-size: 13px; font-weight: 500;
+  cursor: pointer; color: var(--color-text-light); transition: all 0.2s;
+  font-family: var(--font-body);
+}
+.lang-btn.active { background: var(--color-primary); color: var(--color-white); }
+.lang-btn:hover:not(.active) { background: var(--color-primary-bg); color: var(--color-primary-dark); }
+
+/* Navigation */
+.nav-bar { border-top: 1px solid var(--color-border); }
+.nav-bar .container { max-width: var(--max-width); margin: 0 auto; padding: 0; }
+.nav-list { list-style: none; display: flex; flex-wrap: wrap; }
+.nav-list li a {
+  display: block; padding: 12px 20px; font-size: 14px; font-weight: 500;
+  color: var(--color-text); border-bottom: 3px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+.nav-list li a:hover, .nav-list li a.active {
+  color: var(--color-primary-dark);
+  border-bottom-color: var(--color-primary);
+}
+
+/* Mobile */
+.mobile-menu-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--color-text); padding: 4px 8px; }
+@media (max-width: 768px) {
+  .mobile-menu-toggle { display: block; }
+  .nav-bar { display: none; }
+  .nav-bar.open { display: block; }
+  .nav-list { flex-direction: column; }
+  .nav-list li a { border-bottom: 1px solid var(--color-border); }
+  .header-top { flex-wrap: wrap; }
+}
+
+/* Banner */
+.banner { position: relative; background: #000 url("assets/banner.png") center/auto 100% no-repeat; overflow: hidden; }
+.banner::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.20) 50%, rgba(0,0,0,0.05) 100%); pointer-events: none; z-index: 0; }
+.banner-inner { max-width: var(--max-width); margin: 0 auto; padding: 60px 20px; position: relative; z-index: 1; display: flex; align-items: center; gap: 40px; }
+.banner-text { flex: 1; }
+.banner-text h1 { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 700; color: var(--color-white); line-height: 1.3; margin-bottom: 12px; letter-spacing: -0.01em; text-shadow: 0 2px 8px rgba(0,0,0,0.4); }
+.banner-text .subtitle { font-size: 1.05rem; color: rgba(255,255,255,0.85); margin-bottom: 8px; text-shadow: 0 1px 4px rgba(0,0,0,0.4); }
+.banner-text .meta { font-size: 0.95rem; color: rgba(255,255,255,0.90); font-weight: 500; text-shadow: 0 1px 4px rgba(0,0,0,0.4); }
+.banner-visual { flex-shrink: 0; width: 180px; height: 180px; border-radius: 16px; background: rgba(255,255,255,0.15); border: 3px solid rgba(255,255,255,0.5); display: flex; align-items: center; justify-content: center; overflow: hidden; backdrop-filter: blur(4px); }
+.banner-visual .placeholder { font-size: 72px; color: var(--color-primary-light); }
+@media (max-width: 768px) {
+  .banner-inner { flex-direction: column-reverse; text-align: center; padding: 40px 20px; }
+  .banner-text h1 { font-size: 1.6rem; }
+  .banner-visual { width: 140px; height: 140px; }
+}
+
+/* Breadcrumb */
+.breadcrumb { max-width: var(--max-width); margin: 0 auto; padding: 16px 20px 0; font-size: 13px; color: var(--color-text-light); }
+.breadcrumb a { color: var(--color-text-light); }
+.breadcrumb span { color: var(--color-text); }
+
+/* Content */
+.content { max-width: var(--max-width); margin: 0 auto; padding: 0 20px 60px; }
+.section { padding: 40px 0; border-bottom: 1px solid var(--color-border); }
+.section:last-child { border-bottom: none; }
+.section h2 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem; font-weight: 700; color: var(--color-primary-dark);
+  margin-bottom: 20px; padding-bottom: 8px;
+  border-bottom: 2px solid var(--color-primary); display: inline-block;
+}
+.section p, .section li { margin-bottom: 14px; color: var(--color-text); max-width: 800px; }
+.section ul { margin: 10px 0 20px 24px; }
+.section ul li { margin-bottom: 8px; line-height: 1.6; }
+.section h3 { font-size: 1.05rem; color: var(--color-primary-dark); margin: 30px 0 8px; }
+
+/* Theme grid */
+.theme-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; margin-top: 16px; }
+.theme-card { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 20px; transition: border-color 0.2s, box-shadow 0.2s; }
+.theme-card:hover { border-color: var(--color-primary); box-shadow: 0 4px 12px rgba(72,198,218,0.10); }
+.theme-card .code { font-weight: 700; color: var(--color-primary-dark); font-size: 13px; margin-bottom: 6px; }
+.theme-card .title { font-size: 15px; font-weight: 600; color: var(--color-text); }
+
+/* Dates */
+.dates-table { width: 100%; max-width: 700px; border-collapse: collapse; margin-top: 12px; }
+.dates-table th, .dates-table td { padding: 10px 16px; text-align: left; border-bottom: 1px solid var(--color-border); font-size: 14px; }
+.dates-table th { background: var(--color-primary-bg); color: var(--color-primary-dark); font-weight: 600; white-space: nowrap; }
+.dates-table .strikethrough { text-decoration: line-through; color: var(--color-text-light); margin-right: 8px; }
+.dates-table .updated { color: var(--color-primary-dark); font-weight: 600; }
+
+/* Org */
+.org-section { display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-start; }
+.org-logo { width: 120px; height: 120px; background: var(--color-primary-bg); border: 2px solid var(--color-primary); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 48px; color: var(--color-primary); flex-shrink: 0; }
+.org-info h3 { font-size: 1.1rem; color: var(--color-text); margin-bottom: 6px; margin-top: 0; }
+.org-info p { font-size: 14px; color: var(--color-text-light); }
+
+/* Footer */
+.page-foot { background: var(--color-footer); color: rgba(255,255,255,0.7); padding: 40px 20px 30px; font-size: 13px; }
+.page-foot .container { max-width: var(--max-width); margin: 0 auto; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-bottom: 30px; }
+.footer-col h4 { color: var(--color-white); font-size: 14px; margin-bottom: 10px; }
+.footer-col p, .footer-col a { color: rgba(255,255,255,0.6); display: block; margin-bottom: 6px; }
+.footer-col a:hover { color: var(--color-primary-light); }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center; color: rgba(255,255,255,0.4); font-size: 12px; }
+
+/* Back to top */
+.back-top { position: fixed; bottom: 30px; right: 30px; width: 44px; height: 44px; background: var(--color-primary); color: var(--color-white); border: none; border-radius: 50%; cursor: pointer; font-size: 20px; opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s; display: flex; align-items: center; justify-content: center; z-index: 999; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+.back-top.visible { opacity: 1; visibility: visible; }
+.back-top:hover { background: var(--color-primary-dark); }
+</style>
+</head>
+<body>
+<a class="sr-only sr-only-focusable" href="#main-content">Skip to main content</a>
+<header class="page-head">
+  <div class="header-wrap">
+    <div class="header-top">
+      <div class="logo-area">
+        <div class="logo-icon">H</div>
+        <div class="logo-text">
+          <strong>HIRO 2026</strong>
+          <span data-i18n="logoSub">Shinosawa Hiro Studies Workshop</span>
+        </div>
+      </div>
+      <div class="header-top-right">
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="zh">中</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Menu">☰</button>
+      </div>
+    </div>
+    <nav class="nav-bar" id="nav-bar">
+      <div class="container">
+        <ul class="nav-list">
+          <li><a href="#home" class="active" data-i18n="navHome">Home</a></li>
+          <li><a href="#about" data-i18n="navAbout">About</a></li>
+          <li><a href="#call" data-i18n="navCall">Call for Submissions</a></li>
+          <li><a href="#themes" data-i18n="navThemes">Themes</a></li>
+          <li><a href="#dates" data-i18n="navDates">Key Dates</a></li>
+          <li><a href="#registration" data-i18n="navReg">Registration</a></li>
+          <li><a href="#info" data-i18n="navInfo">Other Information</a></li>
+          <li><a href="#special" data-i18n="navSpecial">Special</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content">
+  <!-- Banner -->
+  <section class="banner" id="home">
+    <div class="banner-inner">
+      <div class="banner-text">
+        <h1 data-i18n="bannerTitle">The 1st International Workshop on Shinosawa Hiro Studies (HIRO 2026)</h1>
+        <p class="subtitle" data-i18n="bannerSub">Celebrating the Multiverse of Shinosawa Hiro — Research, Art, and Devotion</p>
+        <p class="meta" data-i18n-html="bannerMeta">December 20, 2026 &nbsp;|&nbsp; Hiro Laboratory</p>
+      </div>
+      <div class="banner-visual">
+        <img src="assets/logo.png" alt="Shinosawa Hiro" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+    </div>
+  </section>
+
+  <div class="breadcrumb">
+    <a href="#home">HIRO 2026</a> &nbsp;/&nbsp; <span data-i18n="breadcrumbHome">Home</span>
+  </div>
+
+  <div class="content">
+    <section class="section" id="welcome">
+      <h2 data-i18n="welcomeH2">Welcome to HIRO 2026</h2>
+      <p data-i18n-html="welcomeP1"></p>
+      <p data-i18n-html="welcomeP2"></p>
+    </section>
+
+    <section class="section" id="about">
+      <h2 data-i18n="aboutH2">About HIRO 2026</h2>
+      <p data-i18n-html="aboutP1"></p>
+      <p data-i18n-html="aboutP2"></p>
+    </section>
+
+    <section class="section" id="call">
+      <h2 data-i18n="callH2">Call for Submissions</h2>
+      <p data-i18n="callIntro"></p>
+      <ul>
+        <li data-i18n-html="callItem1"></li>
+        <li data-i18n-html="callItem2"></li>
+        <li data-i18n-html="callItem3"></li>
+      </ul>
+      <p data-i18n-html="callNote"></p>
+      <h3 style="font-size:1.05rem;color:var(--color-primary-dark);margin:30px 0 8px;" data-i18n="callFormatH3"></h3>
+      <p data-i18n-html="callFormatOral"></p>
+      <p data-i18n-html="callFormatPoster"></p>
+      <p data-i18n="callFormatNote"></p>
+    </section>
+
+    <section class="section" id="themes">
+      <h2 data-i18n="themesH2">Workshop Themes</h2>
+      <p data-i18n="themesIntro"></p>
+      <div class="theme-grid" id="theme-grid"></div>
+    </section>
+
+    <section class="section" id="dates">
+      <h2 data-i18n="datesH2">Key Dates</h2>
+      <table class="dates-table" id="dates-table"></table>
+    </section>
+
+    <section class="section" id="registration">
+      <h2 data-i18n="regH2">Registration</h2>
+      <p data-i18n="regP1"></p>
+      <p data-i18n="regP2"></p>
+      <p data-i18n="regP3"></p>
+    </section>
+
+    <section class="section" id="info">
+      <h2 data-i18n="infoH2">Other Information</h2>
+
+      <h3 data-i18n="infoOrgH3">Organised by</h3>
+      <div class="org-section">
+        <div class="org-logo">🏛</div>
+        <div class="org-info">
+          <h3 data-i18n="infoOrgName">Hiro Laboratory</h3>
+          <p data-i18n="infoOrgDesc"></p>
+        </div>
+      </div>
+
+      <h3 data-i18n="infoVenueH3">Venue</h3>
+      <p data-i18n="infoVenue"></p>
+
+      <h3 data-i18n="infoContactH3">Contact Us</h3>
+      <p><span data-i18n="infoEmailLabel">Email</span>: <a href="mailto:hiro2026@hirolab.org">hiro2026@hirolab.org</a></p>
+      <p><span data-i18n="infoWebLabel">Conference Website</span>: <a href="#">https://hirolab.org/hiro2026</a></p>
+    
+    <section class="section" id="special">
+      <h2 data-i18n="specialH2">Special Programme</h2>
+      <p data-i18n-html="specialDesc"></p>
+    </section>
+  </div>
+</main>
+
+<footer class="page-foot">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>HIRO 2026</h4>
+        <p data-i18n="footerDesc"></p>
+        <p>December 20, 2026</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footerLinks">Quick Links</h4>
+        <a href="#about" data-i18n="navAbout">About</a>
+        <a href="#call" data-i18n="navCall">Call for Submissions</a>
+        <a href="#themes" data-i18n="navThemes">Themes</a>
+        <a href="#dates" data-i18n="navDates">Key Dates</a>
+        <a href="#registration" data-i18n="navReg">Registration</a>
+        <a href="#special" data-i18n="navSpecial">Special</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="infoContactH3">Contact</h4>
+        <a href="mailto:hiro2026@hirolab.org">hiro2026@hirolab.org</a>
+      </div>
+    </div>
+    <div class="footer-bottom" data-i18n="footerCopy"></div>
+  </div>
+</footer>
+
+<button class="back-top" id="back-top" aria-label="Back to top">↑</button>
+<script>
+// ============================================================
+// i18n Dictionary
+// ============================================================
+const I18N = {
+  zh: {
+    logoSub: '篠泽广研究研讨会',
+    navHome: '首页',
+    navAbout: '关于',
+    navCall: '征稿启事',
+    navThemes: '研讨主题',
+    navDates: '重要日期',
+    navReg: '注册参会',
+    navInfo: '其他信息',
+    navSpecial: '特别环节',
+
+    bannerTitle: '第一届篠泽广研究国际研讨会 (HIRO 2026)',
+    bannerSub: '探索篠泽广的多重宇宙——学术、艺术与挚爱',
+    bannerMeta: '2026年12月20日 &nbsp;|&nbsp; 篠泽实验室',
+    breadcrumbHome: '首页',
+
+    welcomeH2: '欢迎参加 HIRO 2026',
+    welcomeP1: '第一届篠泽广研究国际研讨会（HIRO 2026）由篠泽实验室主办。HIRO 2026 将于<strong>2026年12月20日</strong>举行，这一天我们将通过学术交流、艺术展览与集体庆典，共同庆祝篠泽广的多元魅力。',
+    welcomeP2: '本次首届研讨会具有特殊意义：12月21日是篠泽广的生日，我们将在会议现场为篠泽广共同庆祝生日。我们诚挚邀请来自各领域的学者、艺术家、爱好者与追随者齐聚一堂，分享他们受篠泽广启发、或以篠泽广为主题创作的作品。',
+
+    aboutH2: '关于 HIRO 2026',
+    aboutP1: 'HIRO 2026 是一场独特的混合型活动，兼具学术研讨会与生日庆典的双重属性。与传统的学术会议一样，我们欢迎正式的投稿——研究论文、摘要以及技术报告。但与此同时，我们也热烈欢迎各种形式的作品：插画、漫画、同人文，以及与篠泽广这一角色及其世界相关的任何创意表达。',
+    aboutP2: '本次活动议程暂未确定，可以包括名片交换、主题口头汇报、海报展示、放映环节及酒会。所有环节的设计均旨在分享兴趣与快乐，并庆祝篠泽广同学的诞生。注册费即为篠泽广生日会的入场费。',
+
+    callH2: '征稿启事',
+    callIntro: '我们诚邀来自各个领域的研究者、艺术家、作家及创作者，提交与篠泽广相关的原创作品。投稿形式包括但不限于：',
+    callItem1: '<strong>研究论文 / 摘要：</strong>欢迎任何学术性探讨。强烈欢迎与篠泽广或者偶像大师相关的研究内容。',
+    callItem2: '<strong>同人创作：</strong>以篠泽广为主的原创插画、摄影、场景描绘及任何视觉艺术作品和以篠泽广为核心的短篇小说、诗歌、推文等同人文作品。须与篠泽广强相关。',
+    callItem3: '<strong>其他形式：</strong>任何未列入上述类别的文本及图像形式作品均可投稿。',
+    callNote: '<strong>重要提示：</strong>对于同人创作以及其他形式投稿，作品必须<em>强烈且直接地</em>与篠泽广本人相关，一般情况下，仅允许偶像大师系列角色出现在作品中。',
+    callFormatH3: '展示形式',
+    callFormatOral: '<strong>口头汇报（Oral Presentation）：</strong>在研讨会现场进行 8–10 分钟的主题报告。口头汇报者将获得<strong>注册费全额退还</strong>（现场报销），以感谢您为研讨会贡献内容。名额按投稿顺序优先安排；如报名人数较多，组委会保留调整汇报时长的权利。',
+    callFormatPoster: '<strong>展板 / 展陈（Poster / Display）：</strong>您的作品将由组委会统一印刷并布置于会场展示区域，印刷费用由组委会承担。投稿时请提供符合印刷要求的清晰文件（300 dpi，建议 A3 或 A4）。如投稿数量超出场地容量，将按投稿顺序优先展示较早提交的作品。',
+    callFormatNote: '口头汇报与展板展示可同时选择。无论选择何种形式，所有投稿者均需先行注册参会。',
+
+    themesH2: '研讨主题',
+    themesIntro: '本次研讨会涵盖广泛的话题，统一在"篠泽广研究"这一主题之下。征集的主题包括但不限于：',
+    themes: [
+      {code:'H01', title:'篠泽广学术交流'},
+      {code:'H02', title:'篠泽广同人文创作'},
+      {code:'H03', title:'篠泽广美学鉴赏（同人图创作）'},
+      {code:'H04', title:'其他形式创作'}
+    ],
+
+    datesH2: '重要日期',
+    dates: [
+      {event:'投稿截止日期', date:'<span class="strikethrough">2026年11月30日</span> <span class="updated">2026年12月5日</span>'},
+      {event:'录用通知', date:'<span class="strikethrough">2026年12月8日</span> <span class="updated">2026年12月10日</span>'},
+      {event:'最终日程公布', date:'2026年12月14日'},
+      {event:'研讨会 & 生日庆典', date:'<strong>2026年12月20日</strong>'}
+    ],
+
+    regH2: '注册参会',
+    regP1: '所有参会者均需注册。注册费用包含参与全部研讨会环节、酒会及生日庆典活动。',
+    regP2: '注册费即为篠泽广生日庆典的入场费。具体费用标准及注册指引将在适当时候公布。',
+    regP3: '如需咨询注册事宜，请通过下方邮箱联系我们。',
+
+    infoH2: '其他信息',
+    infoOrgH3: '组织机构',
+    infoOrgName: '篠泽实验室',
+    infoOrgDesc: '篠泽实验室是一个独立的跨学科研究与创作团体，致力于篠泽广的跨学科学术研究、艺术创作与社群建设。为筹办 HIRO 2026 而专门组建，实验室是篠泽相关学术探讨、艺术创作与社群交流的中心枢纽。（其实并不存在）',
+    infoVenueH3: '会场信息',
+    infoVenue: '中国江苏省南京市江宁区次元茶会。',
+    infoContactH3: '联系我们',
+    infoEmailLabel: '邮箱',
+    infoWebLabel: '会议网站',
+
+    specialH2: '特别环节',
+    specialDesc: 'HIRO 2026 另设特别线上环节。将于北京时间 <strong>2026 年 12 月 20 日 23:00</strong> 在 YouTube 平台发布，于 <strong>12 月 21 日 00:00</strong> 在 Bilibili 平台发布。敬请关注。',
+
+    footerDesc: '第一届篠泽广研究国际研讨会',
+    footerLinks: '快速链接',
+    footerCopy: '版权所有 \u00a9 2026 篠泽实验室。保留所有权利。'
+  },
+  en: {
+    logoSub: 'Shinosawa Hiro Studies Workshop',
+    navHome: 'Home',
+    navAbout: 'About',
+    navCall: 'Call for Submissions',
+    navThemes: 'Themes',
+    navDates: 'Key Dates',
+    navReg: 'Registration',
+    navInfo: 'Other Information',
+    navSpecial: 'Special Programme',
+
+    bannerTitle: 'The 1st International Workshop on Shinosawa Hiro Studies (HIRO 2026)',
+    bannerSub: 'Celebrating the Multiverse of Shinosawa Hiro \u2014 Research, Art, and Devotion',
+    bannerMeta: 'December 20, 2026 &nbsp;|&nbsp; Hiro Laboratory',
+    breadcrumbHome: 'Home',
+
+    welcomeH2: 'Welcome to HIRO 2026',
+    welcomeP1: 'The 1st International Workshop on Shinosawa Hiro Studies (HIRO 2026) is organised by Hiro Laboratory. HIRO 2026 will be held on <strong>December 20, 2026</strong>, a day dedicated to celebrating the multifaceted brilliance of Shinosawa Hiro through academic exchange, artistic exhibition, and communal festivity.',
+    welcomeP2: 'This inaugural workshop marks a special occasion: December 21 is Shinosawa Hiro\u2019s birthday, and we will celebrate it together on-site during the workshop. We cordially invite scholars, artists, enthusiasts, and devotees from all disciplines to gather and share their works inspired by or dedicated to Shinosawa Hiro.',
+
+    aboutH2: 'About HIRO 2026',
+    aboutP1: 'HIRO 2026 is a unique hybrid of an academic workshop and a birthday celebration. Much like traditional academic conferences, we welcome formal submissions \u2014 research papers, abstracts, and technical reports. At the same time, we warmly embrace creative works of all kinds: illustrations, comics, fan fiction, and any creative expression that engages with the character and world of Shinosawa Hiro.',
+    aboutP2: 'The programme is yet to be finalised and may include business card exchange, oral presentations, poster sessions, screenings, and a reception. All sessions are designed to share interests and joy, and to celebrate the birth of Shinosawa Hiro. The registration fee serves as the admission fee for the Shinosawa Hiro birthday celebration.',
+
+    callH2: 'Call for Submissions',
+    callIntro: 'We invite researchers, artists, writers, and creators of all backgrounds to submit original works related to Shinosawa Hiro. Submissions may take the following forms:',
+    callItem1: '<strong>Research Papers / Abstracts:</strong> Any scholarly inquiry is welcome. Research related to Shinosawa Hiro or <em>The Idolm@ster</em> is strongly encouraged.',
+    callItem2: '<strong>Fan Works:</strong> Original illustrations, photography, scene depictions, and any visual artworks featuring Shinosawa Hiro, as well as fan fiction including short stories, poetry, and social media posts centered on Shinosawa Hiro. Must be strongly Hiro-related.',
+    callItem3: '<strong>Other Formats:</strong> Any textual or visual work not covered by the above categories is welcome.',
+    callNote: '<strong>Important:</strong> For fan works and other format submissions, the work must be <em>strongly and directly</em> related to Shinosawa Hiro. In general, only characters from <em>The Idolm@ster</em> series are permitted to appear in submissions.',
+    callFormatH3: 'Presentation Format',
+    callFormatOral: '<strong>Oral Presentation:</strong> Deliver an 8\u201310 minute talk during the workshop session. Oral presenters will receive a <strong>full registration fee refund</strong> on-site, as thanks for contributing content to the workshop. Slots are allocated on a first-come, first-served basis; the committee reserves the right to adjust presentation length if demand exceeds capacity.',
+    callFormatPoster: '<strong>Poster / Display:</strong> Your work will be printed and exhibited by the organising committee in the venue display area, at no cost to you. Please provide a print-ready file (300 dpi, A3 or A4 recommended) with your submission. If submissions exceed venue capacity, priority will be given to earlier submissions.',
+    callFormatNote: 'Oral presentation and poster display may be selected simultaneously. All submitters are required to register for the workshop regardless of presentation format.',
+
+    themesH2: 'Workshop Themes',
+    themesIntro: 'The workshop invites contributions across a wide range of topics under the unifying umbrella of Shinosawa Hiro Studies. Themes include but are not limited to:',
+    themes: [
+      {code:'H01', title:'Shinosawa Hiro: Academic Exchange'},
+      {code:'H02', title:'Shinosawa Hiro: Fan Fiction and Creative Writing'},
+      {code:'H03', title:'Shinosawa Hiro: Aesthetic Appreciation (Fan Art)'},
+      {code:'H04', title:'Other Creative Formats'}
+    ],
+
+    datesH2: 'Key Dates',
+    dates: [
+      {event:'Submission Deadline', date:'<span class="strikethrough">November 30, 2026</span> <span class="updated">December 5, 2026</span>'},
+      {event:'Notification of Acceptance', date:'<span class="strikethrough">December 8, 2026</span> <span class="updated">December 10, 2026</span>'},
+      {event:'Final Programme Announcement', date:'December 14, 2026'},
+      {event:'Workshop &amp; Birthday Celebration', date:'<strong>December 20, 2026</strong>'}
+    ],
+
+    regH2: 'Registration',
+    regP1: 'Registration is required for all participants and includes access to all workshop sessions, the reception, and the birthday celebration event.',
+    regP2: 'The registration fee serves as the admission fee for the Shinosawa Hiro Birthday Celebration. Detailed fee schedule and registration instructions will be announced in due course.',
+    regP3: 'For registration inquiries, please contact us at the email address listed below.',
+
+    infoH2: 'Other Information',
+    infoOrgH3: 'Organised by',
+    infoOrgName: 'Hiro Laboratory',
+    infoOrgDesc: 'The Hiro Laboratory is an independent research and creative collective dedicated to the interdisciplinary study and celebration of Shinosawa Hiro. Established for the purpose of organising HIRO 2026, the laboratory serves as the central hub for Hiro-related academic inquiry, artistic production, and community engagement. (It does not actually exist.)',
+    infoVenueH3: 'Venue',
+    infoVenue: 'Ciyuan Chahui, Jiangning District, Nanjing, Jiangsu Province, China.',
+    infoContactH3: 'Contact Us',
+    infoEmailLabel: 'Email',
+    infoWebLabel: 'Conference Website',
+
+    specialH2: 'Special Programme',
+    specialDesc: 'HIRO 2026 also features a special online programme. Content will be published on <strong>YouTube at 23:00 (UTC+8) on December 20, 2026</strong>, and on <strong>Bilibili at 00:00 on December 21, 2026</strong>. Stay tuned.',
+
+    footerDesc: 'The 1st International Workshop on Shinosawa Hiro Studies',
+    footerLinks: 'Quick Links',
+    footerCopy: 'Copyright &copy; 2026 Hiro Laboratory. All Rights Reserved.'
+  }
+};// ============================================================
+// Lang State
+// ============================================================
+let currentLang = 'zh';
+
+function setLang(lang) {
+  currentLang = lang;
+  const dict = I18N[lang];
+  document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+
+  // Update lang buttons
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+
+  // Update text-only elements
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (dict[key] !== undefined) {
+      el.textContent = dict[key];
+    }
+  });
+
+  // Update HTML elements
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.dataset.i18nHtml;
+    if (dict[key] !== undefined) {
+      el.innerHTML = dict[key];
+    }
+  });
+
+  // Render dynamic sections
+  renderThemes(dict);
+  renderDates(dict);
+
+  // Save preference
+  try { localStorage.setItem('hiro2026-lang', lang); } catch(e) {}
+}
+
+function renderThemes(dict) {
+  const grid = document.getElementById('theme-grid');
+  if (!grid || !dict.themes) return;
+  grid.innerHTML = dict.themes.map(t =>
+    '<div class="theme-card"><div class="code">' + t.code + '</div><div class="title">' + t.title + '</div></div>'
+  ).join('');
+}
+
+function renderDates(dict) {
+  const tbl = document.getElementById('dates-table');
+  if (!tbl || !dict.dates) return;
+  tbl.innerHTML =
+    '<tr><th>' + (currentLang === 'zh' ? '事项' : 'Event') + '</th><th>' + (currentLang === 'zh' ? '日期' : 'Date') + '</th></tr>' +
+    dict.dates.map(d => '<tr><td>' + d.event + '</td><td>' + d.date + '</td></tr>').join('');
+}
+
+// Init
+(function() {
+  const saved = (function() { try { return localStorage.getItem('hiro2026-lang'); } catch(e) { return null; } })();
+  const initial = saved && I18N[saved] ? saved : 'zh';
+  setLang(initial);
+
+  // Lang switcher
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      setLang(this.dataset.lang);
+    });
+  });
+
+  // Mobile menu
+  document.getElementById('menu-toggle').addEventListener('click', function() {
+    document.getElementById('nav-bar').classList.toggle('open');
+  });
+
+  // Active nav
+  const sections = document.querySelectorAll('.section[id], section[id]');
+  const navLinks = document.querySelectorAll('.nav-list li a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.getAttribute('id');
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+    });
+  });
+
+  // Back to top
+  const backTop = document.getElementById('back-top');
+  window.addEventListener('scroll', () => {
+    backTop.classList.toggle('visible', window.scrollY > 400);
+  });
+  backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+})();
+</script>
+</body>
+</html>

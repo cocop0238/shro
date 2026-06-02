@@ -1,0 +1,6 @@
+*.bak
+*.bak2
+*_backup/
+i18n_text.md
+smllm2026_*
+.DS_Store
