@@ -69,6 +69,13 @@
   <p style="color:#999;font-size:12px;margin-top:8px;">Select "Save as PDF" when printing</p>
 </div>
 
+<div class="no-print" style="margin-bottom:12px;">
+  <label style="font-size:13px;color:#555;margin-right:8px;">Recipient Name:</label>
+  <input id="recipient" type="text" value="Dear Producer," 
+    style="padding:6px 12px;font-size:14px;border:1px solid #ccc;border-radius:4px;width:280px;font-family:Georgia,serif;"
+    oninput="updateRecipient()">
+</div>
+
 <div class="page">
   <div class="letterhead">
     <div class="letterhead-left">
@@ -85,7 +92,7 @@
 
   <div class="date-line">December 20, 2026</div>
 
-  <div class="salutation">Dear Producer,</div>
+  <div class="salutation"><span id="salutation-text">Dear Producer,</span></div>
 
   <div class="body-text">
     <p>
@@ -128,7 +135,7 @@
 
   <div class="closing">
     <div class="sincerely">Yours sincerely,</div>
-    <div class="sign-name">cocop</div>
+    <div class="sign-name"><img src="assets/sign.png" alt="cocop" style="height:48px;width:auto;vertical-align:middle;"></div>
     <div class="sign-title">
       Organising Committee, HIRO 2026<br>
       The 1st International Workshop on Shinosawa Hiro<br>
@@ -137,10 +144,16 @@
   </div>
 
   <div class="footer-bar">
-    <span>HIRO 2026 &middot; hiro2026@hirolab.org &middot; https://cocop0238.github.io/shro/</span>
+    <span>HIRO 2026 &middot; hirolab@163.com &middot; https://cocop0238.github.io/shro/</span>
     <span>December 20, 2026 &middot; Nanjing, China</span>
   </div>
 </div>
 
+<script>
+function updateRecipient() {
+  const name = document.getElementById('recipient').value;
+  document.getElementById('salutation-text').textContent = name || 'Dear Producer,';
+}
+</script>
 </body>
 </html>
