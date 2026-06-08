@@ -4,9 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="format-detection" content="telephone=no">
-<title>HIRO 2026 — The 1st International Workshop on Shinosawa Hiro Studies</title>
+<title>HIRO 2026 — The 1st International Workshop on Shinosawa Hiro</title>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <style>
+@import url('https://fonts.googleapis.com/css2?family=LXGW+WenKai:wght@400;700&family=Noto+Sans+SC:wght@400;500;700&display=swap');
 :root {
   --color-primary: #48C6DA;
   --color-primary-dark: #2E9BB0;
@@ -17,8 +18,8 @@
   --color-white: #FFF;
   --color-border: #E2E8F0;
   --color-footer: #1A202C;
-  --font-heading: 'Georgia', 'Times New Roman', 'Noto Serif SC', 'SimSun', serif;
-  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Microsoft JhengHei', 'PingFang SC', sans-serif;
+  --font-heading: 'LXGW WenKai', 'Georgia', 'Noto Serif SC', 'SimSun', serif;
+  --font-body: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft JhengHei', sans-serif;
   --max-width: 1100px;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -163,7 +164,7 @@ img { max-width: 100%; height: auto; display: block; }
         <div class="logo-icon">H</div>
         <div class="logo-text">
           <strong>HIRO 2026</strong>
-          <span data-i18n="logoSub">Shinosawa Hiro Studies Workshop</span>
+          <span data-i18n="logoSub">Shinosawa Hiro Workshop</span>
         </div>
       </div>
       <div class="header-top-right">
@@ -184,7 +185,9 @@ img { max-width: 100%; height: auto; display: block; }
           <li><a href="#dates" data-i18n="navDates">Key Dates</a></li>
           <li><a href="#registration" data-i18n="navReg">Registration</a></li>
           <li><a href="#info" data-i18n="navInfo">Other Information</a></li>
-          <li><a href="#special" data-i18n="navSpecial">Special</a></li>
+          <li><a href="#guide" data-i18n="navGuide">Submission Guide</a></li>
+          <li><a href="#special" data-i18n="navSpecial">Special</a>
+        <a href="#guide" data-i18n="navGuide">Submission Guide</a></li>
         </ul>
       </div>
     </nav>
@@ -196,7 +199,7 @@ img { max-width: 100%; height: auto; display: block; }
   <section class="banner" id="home">
     <div class="banner-inner">
       <div class="banner-text">
-        <h1 data-i18n="bannerTitle">The 1st International Workshop on Shinosawa Hiro Studies (HIRO 2026)</h1>
+        <h1 data-i18n="bannerTitle">The 1st International Workshop on Shinosawa Hiro (HIRO 2026)</h1>
         <p class="subtitle" data-i18n="bannerSub">Celebrating the Multiverse of Shinosawa Hiro — Research, Art, and Devotion</p>
         <p class="meta" data-i18n-html="bannerMeta">December 20, 2026 &nbsp;|&nbsp; Hiro Laboratory</p>
       </div>
@@ -235,7 +238,8 @@ img { max-width: 100%; height: auto; display: block; }
       <h3 style="font-size:1.05rem;color:var(--color-primary-dark);margin:30px 0 8px;" data-i18n="callFormatH3"></h3>
       <p data-i18n-html="callFormatOral"></p>
       <p data-i18n-html="callFormatPoster"></p>
-      <p data-i18n="callFormatNote"></p>
+      <p data-i18n-html="callFormatNote"></p>
+      <p data-i18n-html="callSubmitEmail"></p>
     </section>
 
     <section class="section" id="themes">
@@ -251,7 +255,7 @@ img { max-width: 100%; height: auto; display: block; }
 
     <section class="section" id="registration">
       <h2 data-i18n="regH2">Registration</h2>
-      <p data-i18n="regP1"></p>
+      <p data-i18n-html="regP1"></p>
       <p data-i18n="regP2"></p>
       <p data-i18n="regP3"></p>
     </section>
@@ -272,7 +276,7 @@ img { max-width: 100%; height: auto; display: block; }
       <p data-i18n="infoVenue"></p>
 
       <h3 data-i18n="infoContactH3">Contact Us</h3>
-      <p><span data-i18n="infoEmailLabel">Email</span>: <a href="mailto:hiro2026@hirolab.org">hiro2026@hirolab.org</a></p>
+      <p><span data-i18n="infoEmailLabel">Email</span>: <a href="mailto:hirolab_hiro2026@163.com">hirolab_hiro2026@163.com</a></p>
       <p><span data-i18n="infoWebLabel">Conference Website</span>: <a href="#">https://hirolab.org/hiro2026</a></p>
     
     <section class="section" id="special">
@@ -281,6 +285,15 @@ img { max-width: 100%; height: auto; display: block; }
     </section>
   </div>
 </main>
+
+
+    <section class="section" id="guide">
+      <h2 data-i18n="guideH2">Submission Guide</h2>
+      <p data-i18n="guideP1"></p>
+      <p data-i18n-html="guideP2"></p>
+      <p data-i18n-html="guideP3"></p>
+    </section>
+
 
 <footer class="page-foot">
   <div class="container">
@@ -298,10 +311,11 @@ img { max-width: 100%; height: auto; display: block; }
         <a href="#dates" data-i18n="navDates">Key Dates</a>
         <a href="#registration" data-i18n="navReg">Registration</a>
         <a href="#special" data-i18n="navSpecial">Special</a>
+        <a href="#guide" data-i18n="navGuide">Submission Guide</a>
       </div>
       <div class="footer-col">
         <h4 data-i18n="infoContactH3">Contact</h4>
-        <a href="mailto:hiro2026@hirolab.org">hiro2026@hirolab.org</a>
+        <a href="mailto:hirolab_hiro2026@163.com">hirolab_hiro2026@163.com</a>
       </div>
     </div>
     <div class="footer-bottom" data-i18n="footerCopy"></div>
@@ -315,7 +329,7 @@ img { max-width: 100%; height: auto; display: block; }
 // ============================================================
 const I18N = {
   zh: {
-    logoSub: '篠泽广研究研讨会',
+    logoSub: '篠泽广研讨会',
     navHome: '首页',
     navAbout: '关于',
     navCall: '征稿启事',
@@ -323,73 +337,69 @@ const I18N = {
     navDates: '重要日期',
     navReg: '注册参会',
     navInfo: '其他信息',
+    navGuide: '投稿指引',
     navSpecial: '特别环节',
-
-    bannerTitle: '第一届篠泽广研究国际研讨会 (HIRO 2026)',
+    bannerTitle: '第一届篠泽广国际研讨会 (HIRO 2026)',
     bannerSub: '探索篠泽广的多重宇宙——学术、艺术与挚爱',
     bannerMeta: '2026年12月20日 &nbsp;|&nbsp; 篠泽实验室',
     breadcrumbHome: '首页',
-
     welcomeH2: '欢迎参加 HIRO 2026',
-    welcomeP1: '第一届篠泽广研究国际研讨会（HIRO 2026）由篠泽实验室主办。HIRO 2026 将于<strong>2026年12月20日</strong>举行，这一天我们将通过学术交流、艺术展览与集体庆典，共同庆祝篠泽广的多元魅力。',
+    welcomeP1: '第一届篠泽广国际研讨会（HIRO 2026）由篠泽实验室主办。HIRO 2026 将于<strong>2026年12月20日</strong>举行，这一天我们将通过学术交流、艺术展览与集体庆典，共同庆祝篠泽广的多元魅力。',
     welcomeP2: '本次首届研讨会具有特殊意义：12月21日是篠泽广的生日，我们将在会议现场为篠泽广共同庆祝生日。我们诚挚邀请来自各领域的学者、艺术家、爱好者与追随者齐聚一堂，分享他们受篠泽广启发、或以篠泽广为主题创作的作品。',
-
     aboutH2: '关于 HIRO 2026',
     aboutP1: 'HIRO 2026 是一场独特的混合型活动，兼具学术研讨会与生日庆典的双重属性。与传统的学术会议一样，我们欢迎正式的投稿——研究论文、摘要以及技术报告。但与此同时，我们也热烈欢迎各种形式的作品：插画、漫画、同人文，以及与篠泽广这一角色及其世界相关的任何创意表达。',
-    aboutP2: '本次活动议程暂未确定，可以包括名片交换、主题口头汇报、海报展示、放映环节及酒会。所有环节的设计均旨在分享兴趣与快乐，并庆祝篠泽广同学的诞生。注册费即为篠泽广生日会的入场费。',
-
+    aboutP2: '本次活动议程暂未确定，可以包括名片交换、主题口头汇报、海报展示、放映环节及酒会（无酒精饮料）。所有环节的设计均旨在分享兴趣与快乐，并庆祝篠泽广同学的诞生。注册费即为篠泽广生日会的入场费。',
     callH2: '征稿启事',
+    callSubmitEmail: '投稿请发送至邮箱：<a href="mailto:hirolab_hiro2026@163.com">hirolab_hiro2026@163.com</a>。请在邮件中注明投稿类别及常用联系方式。',
     callIntro: '我们诚邀来自各个领域的研究者、艺术家、作家及创作者，提交与篠泽广相关的原创作品。投稿形式包括但不限于：',
     callItem1: '<strong>研究论文 / 摘要：</strong>欢迎任何学术性探讨。强烈欢迎与篠泽广或者偶像大师相关的研究内容。',
     callItem2: '<strong>同人创作：</strong>以篠泽广为主的原创插画、摄影、场景描绘及任何视觉艺术作品和以篠泽广为核心的短篇小说、诗歌、推文等同人文作品。须与篠泽广强相关。',
     callItem3: '<strong>其他形式：</strong>任何未列入上述类别的文本及图像形式作品均可投稿。',
     callNote: '<strong>重要提示：</strong>对于同人创作以及其他形式投稿，作品必须<em>强烈且直接地</em>与篠泽广本人相关，一般情况下，仅允许偶像大师系列角色出现在作品中。',
     callFormatH3: '展示形式',
-    callFormatOral: '<strong>口头汇报（Oral Presentation）：</strong>在研讨会现场进行 8–10 分钟的主题报告。口头汇报者将获得<strong>注册费全额退还</strong>（现场报销），以感谢您为研讨会贡献内容。名额按投稿顺序优先安排；如报名人数较多，组委会保留调整汇报时长的权利。',
-    callFormatPoster: '<strong>展板 / 展陈（Poster / Display）：</strong>您的作品将由组委会统一印刷并布置于会场展示区域，印刷费用由组委会承担。投稿时请提供符合印刷要求的清晰文件（300 dpi，建议 A3 或 A4）。如投稿数量超出场地容量，将按投稿顺序优先展示较早提交的作品。',
-    callFormatNote: '口头汇报与展板展示可同时选择。无论选择何种形式，所有投稿者均需先行注册参会。',
-
+    callFormatOral: '<strong>口头汇报（Oral Presentation）：</strong>在研讨会现场进行 8–10 分钟的主题报告。名额按投稿顺序优先安排；如报名人数较多，组委会保留调整汇报时长的权利。选择口头汇报即默认同意将作品收录于会议论文集。',
+    callFormatPoster: '<strong>展板（Poster）：</strong>您的作品将由组委会统一印刷并布置于会场展示区域，印刷费用由组委会承担。投稿文件须为 <strong>A4 大小、300 dpi</strong>。请投稿人根据所展示内容自行进行一定程度的美工设计与排版处理，以确保展板的视觉效果。选择展板展示即默认同意将作品收录于会议论文集。',
+    callFormatNote: '<strong>仅投稿论文集（Proceedings Only）：</strong>如不参与口头汇报或展板展示，可选择仅将作品收录于会议论文集，供投稿人与注册参会者留存。',
     themesH2: '研讨主题',
-    themesIntro: '本次研讨会涵盖广泛的话题，统一在"篠泽广研究"这一主题之下。征集的主题包括但不限于：',
+    themesIntro: '本次研讨会涵盖广泛的话题，统一在"篠泽广"这一主题之下。征集的主题包括但不限于：',
     themes: [
       {code:'H01', title:'篠泽广学术交流'},
       {code:'H02', title:'篠泽广同人文创作'},
       {code:'H03', title:'篠泽广美学鉴赏（同人图创作）'},
       {code:'H04', title:'其他形式创作'}
     ],
-
     datesH2: '重要日期',
     dates: [
-      {event:'投稿截止日期', date:'<span class="strikethrough">2026年11月30日</span> <span class="updated">2026年12月5日</span>'},
-      {event:'录用通知', date:'<span class="strikethrough">2026年12月8日</span> <span class="updated">2026年12月10日</span>'},
-      {event:'最终日程公布', date:'2026年12月14日'},
+      {event:'投稿截止日期', date:'<strong>2026年11月11日</strong>'},
+      {event:'录用通知', date:'<strong>2026年11月21日</strong>'},
+      {event:'最终日程公布', date:'2026年12月1日'},
       {event:'研讨会 & 生日庆典', date:'<strong>2026年12月20日</strong>'}
     ],
-
     regH2: '注册参会',
-    regP1: '所有参会者均需注册。注册费用包含参与全部研讨会环节、酒会及生日庆典活动。',
-    regP2: '注册费即为篠泽广生日庆典的入场费。具体费用标准及注册指引将在适当时候公布。',
+    regP1: '所有想要去会议现场的参会者均需注册。注册费用包含参与全部研讨会环节、酒会及生日庆典活动。口头汇报者与到场的展板汇报者凭录用邀请函将获得<strong>注册费全额退还</strong>（现场报销），以感谢您为研讨会贡献内容。',
+    regP2: '注册费即为篠泽广生日庆典的入场费。具体费用标准及注册指引将根据各地会场实际情况在适当时候公布。',
     regP3: '如需咨询注册事宜，请通过下方邮箱联系我们。',
-
     infoH2: '其他信息',
     infoOrgH3: '组织机构',
     infoOrgName: '篠泽实验室',
     infoOrgDesc: '篠泽实验室是一个独立的跨学科研究与创作团体，致力于篠泽广的跨学科学术研究、艺术创作与社群建设。为筹办 HIRO 2026 而专门组建，实验室是篠泽相关学术探讨、艺术创作与社群交流的中心枢纽。（其实并不存在）',
     infoVenueH3: '会场信息',
-    infoVenue: '中国江苏省南京市江宁区次元茶会。',
+    infoVenue: '南京分会场：中国江苏省南京市江宁区次元茶会。',
     infoContactH3: '联系我们',
     infoEmailLabel: '邮箱',
     infoWebLabel: '会议网站',
-
     specialH2: '特别环节',
-    specialDesc: 'HIRO 2026 另设特别线上环节。将于北京时间 <strong>2026 年 12 月 20 日 23:00</strong> 在 YouTube 平台发布，于 <strong>12 月 21 日 00:00</strong> 在 Bilibili 平台发布。敬请关注。',
-
-    footerDesc: '第一届篠泽广研究国际研讨会',
+    specialDesc: 'HIRO 2026 另设特别线上环节。将于北京时间 <strong>2026 年 12 月 20 日 23:00</strong> 在 YouTube 平台发布，于 <strong>12 月 20 日 23:00</strong> 在 Bilibili 平台发布。敬请关注。',
+    guideH2: '投稿指引',
+    guideP1: '请投稿者将论文摘要、图像、同人文全文通过电子邮件发送至投稿邮箱：<a href="mailto:hirolab_hiro2026@163.com">hirolab_hiro2026@163.com</a>。',
+    guideP2: '<strong>邮件标题格式：</strong>[HIRO 2026 投稿] 作品标题 — 展示方式（口头汇报 / 展板 / 仅论文集）— 研讨主题编号（H01–H04）。如不选择口头汇报或展板，可不填展示方式。',
+    guideP3: '<strong>邮件正文：</strong>请附上您的常用联系方式（如 QQ、微信、电子邮箱等），以便组委会在录用后及时与您取得联系。如有多个联系方式，请注明首选方式。',
+    footerDesc: '第一届篠泽广国际研讨会',
     footerLinks: '快速链接',
     footerCopy: '版权所有 \u00a9 2026 篠泽实验室。保留所有权利。'
   },
   en: {
-    logoSub: 'Shinosawa Hiro Studies Workshop',
+    logoSub: 'Shinosawa Hiro Workshop',
     navHome: 'Home',
     navAbout: 'About',
     navCall: 'Call for Submissions',
@@ -397,72 +407,71 @@ const I18N = {
     navDates: 'Key Dates',
     navReg: 'Registration',
     navInfo: 'Other Information',
+    navGuide: 'Submission Guide',
     navSpecial: 'Special Programme',
-
-    bannerTitle: 'The 1st International Workshop on Shinosawa Hiro Studies (HIRO 2026)',
+    bannerTitle: 'The 1st International Workshop on Shinosawa Hiro (HIRO 2026)',
     bannerSub: 'Celebrating the Multiverse of Shinosawa Hiro \u2014 Research, Art, and Devotion',
     bannerMeta: 'December 20, 2026 &nbsp;|&nbsp; Hiro Laboratory',
     breadcrumbHome: 'Home',
-
     welcomeH2: 'Welcome to HIRO 2026',
-    welcomeP1: 'The 1st International Workshop on Shinosawa Hiro Studies (HIRO 2026) is organised by Hiro Laboratory. HIRO 2026 will be held on <strong>December 20, 2026</strong>, a day dedicated to celebrating the multifaceted brilliance of Shinosawa Hiro through academic exchange, artistic exhibition, and communal festivity.',
+    welcomeP1: 'The 1st International Workshop on Shinosawa Hiro (HIRO 2026) is organised by Hiro Laboratory. HIRO 2026 will be held on <strong>December 20, 2026</strong>, a day dedicated to celebrating the multifaceted brilliance of Shinosawa Hiro through academic exchange, artistic exhibition, and communal festivity.',
     welcomeP2: 'This inaugural workshop marks a special occasion: December 21 is Shinosawa Hiro\u2019s birthday, and we will celebrate it together on-site during the workshop. We cordially invite scholars, artists, enthusiasts, and devotees from all disciplines to gather and share their works inspired by or dedicated to Shinosawa Hiro.',
-
     aboutH2: 'About HIRO 2026',
     aboutP1: 'HIRO 2026 is a unique hybrid of an academic workshop and a birthday celebration. Much like traditional academic conferences, we welcome formal submissions \u2014 research papers, abstracts, and technical reports. At the same time, we warmly embrace creative works of all kinds: illustrations, comics, fan fiction, and any creative expression that engages with the character and world of Shinosawa Hiro.',
-    aboutP2: 'The programme is yet to be finalised and may include business card exchange, oral presentations, poster sessions, screenings, and a reception. All sessions are designed to share interests and joy, and to celebrate the birth of Shinosawa Hiro. The registration fee serves as the admission fee for the Shinosawa Hiro birthday celebration.',
-
+    aboutP2: 'The programme is yet to be finalised and may include business card exchange, oral presentations, poster sessions, screenings, and a reception (non-alcoholic). All sessions are designed to share interests and joy, and to celebrate the birth of Shinosawa Hiro. The registration fee serves as the admission fee for the Shinosawa Hiro birthday celebration.',
     callH2: 'Call for Submissions',
+    callSubmitEmail: 'Please submit your work to: <a href="mailto:hirolab_hiro2026@163.com">hirolab_hiro2026@163.com</a>. Please indicate the submission category and provide your preferred contact information in the email.',
     callIntro: 'We invite researchers, artists, writers, and creators of all backgrounds to submit original works related to Shinosawa Hiro. Submissions may take the following forms:',
     callItem1: '<strong>Research Papers / Abstracts:</strong> Any scholarly inquiry is welcome. Research related to Shinosawa Hiro or <em>The Idolm@ster</em> is strongly encouraged.',
     callItem2: '<strong>Fan Works:</strong> Original illustrations, photography, scene depictions, and any visual artworks featuring Shinosawa Hiro, as well as fan fiction including short stories, poetry, and social media posts centered on Shinosawa Hiro. Must be strongly Hiro-related.',
     callItem3: '<strong>Other Formats:</strong> Any textual or visual work not covered by the above categories is welcome.',
     callNote: '<strong>Important:</strong> For fan works and other format submissions, the work must be <em>strongly and directly</em> related to Shinosawa Hiro. In general, only characters from <em>The Idolm@ster</em> series are permitted to appear in submissions.',
     callFormatH3: 'Presentation Format',
-    callFormatOral: '<strong>Oral Presentation:</strong> Deliver an 8\u201310 minute talk during the workshop session. Oral presenters will receive a <strong>full registration fee refund</strong> on-site, as thanks for contributing content to the workshop. Slots are allocated on a first-come, first-served basis; the committee reserves the right to adjust presentation length if demand exceeds capacity.',
-    callFormatPoster: '<strong>Poster / Display:</strong> Your work will be printed and exhibited by the organising committee in the venue display area, at no cost to you. Please provide a print-ready file (300 dpi, A3 or A4 recommended) with your submission. If submissions exceed venue capacity, priority will be given to earlier submissions.',
-    callFormatNote: 'Oral presentation and poster display may be selected simultaneously. All submitters are required to register for the workshop regardless of presentation format.',
-
+    callFormatOral: '<strong>Oral Presentation:</strong> Deliver an 8\u201310 minute talk during the workshop session. Slots are allocated on a first-come, first-served basis; the committee reserves the right to adjust presentation length if demand exceeds capacity. By choosing oral presentation, you consent to having your work included in the workshop proceedings.',
+    callFormatPoster: '<strong>Poster:</strong> Your work will be printed and exhibited by the organising committee in the venue display area, at no cost to you. Submission files must be <strong>A4 size, 300 dpi</strong>. Authors are expected to design and lay out their poster content with appropriate artistic care to ensure visual quality. By choosing poster display, you consent to having your work included in the workshop proceedings.',
+    callFormatNote: '<strong>Proceedings Only:</strong> If you do not wish to present orally or display a poster, you may choose to have your work included in the workshop proceedings, for the contributor and registered attendees to keep.',
     themesH2: 'Workshop Themes',
-    themesIntro: 'The workshop invites contributions across a wide range of topics under the unifying umbrella of Shinosawa Hiro Studies. Themes include but are not limited to:',
+    themesIntro: 'The workshop invites contributions across a wide range of topics under the unifying umbrella of Shinosawa Hiro. Themes include but are not limited to:',
     themes: [
       {code:'H01', title:'Shinosawa Hiro: Academic Exchange'},
       {code:'H02', title:'Shinosawa Hiro: Fan Fiction and Creative Writing'},
       {code:'H03', title:'Shinosawa Hiro: Aesthetic Appreciation (Fan Art)'},
       {code:'H04', title:'Other Creative Formats'}
     ],
-
     datesH2: 'Key Dates',
     dates: [
-      {event:'Submission Deadline', date:'<span class="strikethrough">November 30, 2026</span> <span class="updated">December 5, 2026</span>'},
-      {event:'Notification of Acceptance', date:'<span class="strikethrough">December 8, 2026</span> <span class="updated">December 10, 2026</span>'},
-      {event:'Final Programme Announcement', date:'December 14, 2026'},
+      {event:'Submission Deadline', date:'<strong>November 11, 2026</strong>'},
+      {event:'Notification of Acceptance', date:'<strong>November 21, 2026</strong>'},
+      {event:'Final Programme Announcement', date:'December 1, 2026'},
       {event:'Workshop &amp; Birthday Celebration', date:'<strong>December 20, 2026</strong>'}
     ],
-
     regH2: 'Registration',
-    regP1: 'Registration is required for all participants and includes access to all workshop sessions, the reception, and the birthday celebration event.',
-    regP2: 'The registration fee serves as the admission fee for the Shinosawa Hiro Birthday Celebration. Detailed fee schedule and registration instructions will be announced in due course.',
+    regP1: 'All in-person attendees are required to register. Registration includes access to all workshop sessions, the reception, and the birthday celebration event. Oral presenters and on-site poster presenters will receive a <strong>full registration fee refund</strong> on-site upon presenting their acceptance letter, as thanks for contributing content to the workshop.',
+    regP2: 'The registration fee serves as the admission fee for the Shinosawa Hiro Birthday Celebration. Detailed fee schedules and registration instructions will be announced in due course according to each venue.',
     regP3: 'For registration inquiries, please contact us at the email address listed below.',
-
     infoH2: 'Other Information',
     infoOrgH3: 'Organised by',
     infoOrgName: 'Hiro Laboratory',
     infoOrgDesc: 'The Hiro Laboratory is an independent research and creative collective dedicated to the interdisciplinary study and celebration of Shinosawa Hiro. Established for the purpose of organising HIRO 2026, the laboratory serves as the central hub for Hiro-related academic inquiry, artistic production, and community engagement. (It does not actually exist.)',
     infoVenueH3: 'Venue',
-    infoVenue: 'Ciyuan Chahui, Jiangning District, Nanjing, Jiangsu Province, China.',
+    infoVenue: 'Nanjing Sub-venue: Ciyuan Chahui, Jiangning District, Nanjing, Jiangsu Province, China.',
     infoContactH3: 'Contact Us',
     infoEmailLabel: 'Email',
     infoWebLabel: 'Conference Website',
-
     specialH2: 'Special Programme',
-    specialDesc: 'HIRO 2026 also features a special online programme. Content will be published on <strong>YouTube at 23:00 (UTC+8) on December 20, 2026</strong>, and on <strong>Bilibili at 00:00 on December 21, 2026</strong>. Stay tuned.',
-
-    footerDesc: 'The 1st International Workshop on Shinosawa Hiro Studies',
+    specialDesc: 'HIRO 2026 also features a special online programme. Content will be published on <strong>YouTube at 23:00 (UTC+8) on December 20, 2026</strong>, and on <strong>Bilibili at 23:00 on December 20, 2026</strong>. Stay tuned.',
+    guideH2: 'Submission Guide',
+    guideP1: 'Please send your papers, abstracts, images, and fan fiction manuscripts via email to: <a href="mailto:hirolab_hiro2026@163.com">hirolab_hiro2026@163.com</a>.',
+    guideP2: '<strong>Email subject format:</strong> [HIRO 2026 Submission] Work Title — Presentation Format (Oral / Poster / Proceedings Only) — Theme Code (H01–H04). If not presenting orally or by poster, the presentation format may be omitted.',
+    guideP3: '<strong>Email body:</strong> Please include your preferred contact information (e.g. email, QQ, WeChat) so that the organising committee can reach you upon acceptance. If providing multiple contacts, please indicate your preferred method.',
+    footerDesc: 'The 1st International Workshop on Shinosawa Hiro',
     footerLinks: 'Quick Links',
     footerCopy: 'Copyright &copy; 2026 Hiro Laboratory. All Rights Reserved.'
   }
-};// ============================================================
+};
+
+
+// ============================================================
 // Lang State
 // ============================================================
 let currentLang = 'zh';

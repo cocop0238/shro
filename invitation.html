@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HIRO 2026 — Invitation Letter</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=LXGW+WenKai&family=Noto+Sans+SC:wght@400;500;700&display=swap');
+  @page { size: A4; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Georgia', 'Times New Roman', 'Noto Sans SC', serif; color: #333; }
+
+  .page {
+    width: 210mm; min-height: 297mm;
+    margin: 0 auto;
+    padding: 32mm 22mm 22mm 22mm;
+    position: relative;
+    background: #fff;
+  }
+
+  .letterhead {
+    border-bottom: 2px solid #48C6DA;
+    padding-bottom: 14px;
+    margin-bottom: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .letterhead-left .org { font-size: 12pt; font-weight: 700; color: #48C6DA; letter-spacing: 0.5px; }
+  .letterhead-left .sub { font-size: 8pt; color: #666; margin-top: 2px; }
+  .letterhead-right { text-align: right; font-size: 8pt; color: #666; line-height: 1.5; }
+
+  .addr-cn { text-align: right; font-size: 8.5pt; color: #555; margin-bottom: 28px; }
+  .date-line { font-size: 10pt; margin-bottom: 18px; color: #444; }
+  .salutation { font-size: 11pt; margin-bottom: 16px; }
+
+  .body-text { font-size: 10.5pt; line-height: 1.8; text-align: justify; }
+  .body-text p { margin-bottom: 14px; }
+
+  .closing { margin-top: 32px; }
+  .closing .sincerely { font-size: 10.5pt; margin-bottom: 30px; }
+  .closing .sign-name { font-size: 11pt; font-weight: 700; }
+  .closing .sign-title { font-size: 9pt; color: #555; line-height: 1.6; margin-top: 4px; }
+
+  .footer-bar {
+    position: absolute; bottom: 18mm; left: 22mm; right: 22mm;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 8px;
+    font-size: 7.5pt; color: #aaa;
+    display: flex; justify-content: space-between;
+  }
+
+  @media print { body { background: #fff; } .page { box-shadow: none; } .no-print { display: none; } }
+  @media screen { body { background: #e8e8e8; padding: 20px; } .page { box-shadow: 0 2px 20px rgba(0,0,0,0.12); margin-bottom: 20px; } }
+
+  .no-print { text-align: center; margin: 16px 0; }
+  .no-print button {
+    background: #48C6DA; color: #fff; border: none;
+    padding: 10px 30px; font-size: 14px; border-radius: 6px; cursor: pointer;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+  .no-print button:hover { background: #2E9BB0; }
+</style>
+</head>
+<body>
+
+<div class="no-print">
+  <button onclick="window.print()">Print / Export PDF</button>
+  <p style="color:#999;font-size:12px;margin-top:8px;">Select "Save as PDF" when printing</p>
+</div>
+
+<div class="page">
+  <div class="letterhead">
+    <div class="letterhead-left">
+      <div class="org">HIRO LABORATORY</div>
+      <div class="sub">The 1st International Workshop on Shinosawa Hiro</div>
+    </div>
+    <div class="letterhead-right">
+      Ciyuan Chahui, Jiangning District<br>
+      Nanjing, Jiangsu Province, China
+    </div>
+  </div>
+
+  <div class="addr-cn">Ciyuan Chahui, Jiangning District, Nanjing, Jiangsu Province, China</div>
+
+  <div class="date-line">December 20, 2026</div>
+
+  <div class="salutation">Dear Producer,</div>
+
+  <div class="body-text">
+    <p>
+      I am writing on behalf of the HIRO 2026 Organising Committee to cordially invite you to attend
+      the 1st International Workshop on Shinosawa Hiro (HIRO 2026),
+      which will be held at Ciyuan Chahui, Jiangning District, Nanjing, Jiangsu Province, China,
+      on <strong>December 20, 2026</strong>.
+    </p>
+
+    <p>
+      HIRO 2026 is a unique hybrid of an academic workshop and a birthday celebration.
+      The workshop aims to serve as a premier platform for exploring the multifaceted brilliance
+      of Shinosawa Hiro through academic exchange, artistic exhibition, and communal festivity.
+      Our goal is to bring together scholars, artists, enthusiasts, and devotees from all disciplines
+      to share their works inspired by or dedicated to Shinosawa Hiro.
+    </p>
+
+    <p>
+      The programme will include oral presentations, poster and art displays, a reception,
+      and a birthday celebration. We welcome contributions across a wide range of topics
+      under the unifying umbrella of Shinosawa Hiro,
+      including scholarly research, fan fiction, fan art, and other creative formats.
+    </p>
+
+    <p>
+      Given your passion for Shinosawa Hiro, we believe that your participation would greatly enrich
+      the discussions and festivities of the workshop. We would be delighted if you could join us
+      on this special occasion.
+    </p>
+
+    <p>
+      For registration and submission details, please visit our conference website:
+      <strong>https://cocop0238.github.io/shro/</strong>
+    </p>
+
+    <p>
+      I look forward to celebrating with you at HIRO 2026.
+    </p>
+  </div>
+
+  <div class="closing">
+    <div class="sincerely">Yours sincerely,</div>
+    <div class="sign-name">cocop</div>
+    <div class="sign-title">
+      Organising Committee, HIRO 2026<br>
+      The 1st International Workshop on Shinosawa Hiro<br>
+      Nanjing, Jiangsu Province, China
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <span>HIRO 2026 &middot; hiro2026@hirolab.org &middot; https://cocop0238.github.io/shro/</span>
+    <span>December 20, 2026 &middot; Nanjing, China</span>
+  </div>
+</div>
+
+</body>
+</html>
