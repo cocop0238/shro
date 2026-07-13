@@ -206,9 +206,6 @@ html[lang="en"] .slogan-bar { font-family: 'Great Vibes', cursive; font-size: 1.
 }
 
 /* Back to top */
-.back-top { position: fixed; bottom: 30px; right: 30px; width: 44px; height: 44px; background: var(--color-primary); color: var(--color-white); border: none; border-radius: 50%; cursor: pointer; font-size: 20px; opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s; display: flex; align-items: center; justify-content: center; z-index: 999; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
-.back-top.visible { opacity: 1; visibility: visible; }
-.back-top:hover { background: var(--color-primary-dark); }
 
 /* Hiro Desk Pet */
 #hiro-pet {
@@ -402,7 +399,7 @@ html[lang="en"] .slogan-bar { font-family: 'Great Vibes', cursive; font-size: 1.
   </div>
 </footer>
 
-<button class="back-top" id="back-top" aria-label="Back to top">↑</button>
+
 <div class="cta-fixed">
   <a href="#guide" data-i18n="navSubmit">📮 立即投稿</a>
   <a href="#registration" data-i18n="navRegister">📋 注册参会</a>
@@ -435,13 +432,13 @@ const I18N = {
     welcomeP2: '本次首届研讨会具有特殊意义：12月21日是篠泽广的生日，我们将在会议现场为篠泽广共同庆祝生日。我们诚挚邀请来自各领域的学者、艺术家、爱好者与追随者齐聚一堂，分享他们受篠泽广启发、或以篠泽广为主题创作的作品。',
     aboutH2: '关于 HIRO 2026',
     aboutP1: 'HIRO 2026 是一场独特的混合型活动，兼具学术研讨会与生日庆典的双重属性。与传统的学术会议一样，我们欢迎正式的投稿——研究论文、摘要以及技术报告。但与此同时，我们也热烈欢迎各种形式的作品：插画、漫画、同人文，以及与篠泽广这一角色及其世界相关的任何创意表达。',
-    aboutP2: '本次活动包括学术汇报交流、展板展示、名片交换、视频放映、酒会以及篠泽广生日会。所有环节的设计均旨在分享兴趣与快乐，并庆祝篠泽广同学的诞生。',
+    aboutP2: '本次活动包括<strong>学术汇报交流、展板展示、名片交换、视频放映、酒会以及篠泽广生日会</strong>。所有环节的设计均旨在分享兴趣与快乐，并庆祝篠泽广同学的诞生。',
     callH2: '征稿启事',
     callIntro: '我们诚邀来自各个领域的研究者、艺术家、作家及创作者，提交与篠泽广相关的原创作品。投稿形式包括但不限于：',
-    callItem1: '<strong>研究论文 / 摘要：</strong>欢迎投递任何学科/领域的学术性探讨。强烈欢迎与篠泽广或者偶像大师相关的研究内容。',
+    callItem1: '<strong>研究论文 / 摘要：</strong>欢迎投递任何学科/领域的学术性探讨。强烈欢迎与篠泽广或者《偶像大师》相关的研究内容。',
     callItem2: '<strong>同人创作：</strong>以篠泽广为主的原创插画、摄影、场景描绘及任何视觉艺术作品和以篠泽广为核心的短篇小说、诗歌、推文等同人文作品。须与篠泽广强相关。',
     callItem3: '<strong>其他形式：</strong>任何未列入上述类别的文本及图像形式作品均可投稿。',
-    callNote: '<strong>重要提示：</strong>对于同人创作以及其他形式投稿，作品必须<em>强烈且直接地</em>与篠泽广本人相关，一般情况下，仅允许偶像大师系列角色出现在作品中。我们建议各位采用制作人名称进行投稿，如果可以，我们希望能够收录您的论文全文以供与会人员交流讨论。',
+    callNote: '<strong>重要提示：</strong>对于同人创作以及其他形式投稿，作品必须<em>强烈且直接地</em>与篠泽广本人相关，一般情况下，仅允许《偶像大师》系列角色出现在作品中。我们建议各位采用制作人名称进行投稿，如果可以，我们希望能够收录您的论文全文以供与会人员交流讨论。',
     callFormatH3: '展示形式',
     callFormatOral: '<strong>口头汇报（Oral Presentation）：</strong>在研讨会现场进行 8–10 分钟的主题报告。名额按投稿顺序优先安排；如报名人数较多，组委会保留调整汇报时长的权利。选择口头汇报即默认同意将作品收录于会议论文集。<strong>在日程允许的情况下，口头汇报亦可通过线上会议远程参与；本次研讨会将同步进行网络直播。</strong>',
     callFormatPoster: '<strong>展板（Poster）：</strong>您的作品将由组委会统一印刷并布置于会场展示区域，印刷费用由组委会承担。投稿文件须为 <strong>A3/A4 大小、300 dpi</strong>。请投稿人根据所展示内容自行进行一定程度的美工设计与排版处理，以确保展板的视觉效果。选择展板展示即默认同意将作品收录于会议论文集。',
@@ -510,7 +507,7 @@ const I18N = {
     welcomeP2: 'This inaugural workshop marks a special occasion: December 21 is Shinosawa Hiro\u2019s birthday, and we will celebrate it together on-site during the workshop. We cordially invite scholars, artists, enthusiasts, and devotees from all disciplines to gather and share their works inspired by or dedicated to Shinosawa Hiro.',
     aboutH2: 'About HIRO 2026',
     aboutP1: 'HIRO 2026 is a unique hybrid of an academic workshop and a birthday celebration. Much like traditional academic conferences, we welcome formal submissions \u2014 research papers, abstracts, and technical reports. At the same time, we warmly embrace creative works of all kinds: illustrations, comics, fan fiction, and any creative expression that engages with the character and world of Shinosawa Hiro.',
-    aboutP2: 'The programme includes research presentations, poster exhibitions, business card exchange, video screenings, a reception, and the Shinosawa Hiro birthday celebration. All sessions are designed to share interests and joy, and to celebrate the birth of Shinosawa Hiro.',
+    aboutP2: 'The programme includes <strong>research presentations, poster exhibitions, business card exchange, video screenings, a reception, and the Shinosawa Hiro birthday celebration</strong>. All sessions are designed to share interests and joy, and to celebrate the birth of Shinosawa Hiro.',
     callH2: 'Call for Submissions',
     callIntro: 'We invite researchers, artists, writers, and creators of all backgrounds to submit original works related to Shinosawa Hiro. Submissions may take the following forms:',
     callItem1: '<strong>Research Papers / Abstracts:</strong> Scholarly inquiry from any discipline or field is welcome. Research related to Shinosawa Hiro or <em>The Idolm@ster</em> is strongly encouraged.',
@@ -664,13 +661,6 @@ function copyToClipboard(text, btn) {
       if (link.getAttribute('href') === '#' + current) link.classList.add('active');
     });
   });
-
-  // Back to top
-  const backTop = document.getElementById('back-top');
-  window.addEventListener('scroll', () => {
-    backTop.classList.toggle('visible', window.scrollY > 400);
-  });
-  backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 })();
 </script>
 <div id="hiro-pet" title="Hiro"></div>
