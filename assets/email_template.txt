@@ -1,15 +1,69 @@
-[HIRO 2026 投稿] 作品标题 — 展示方式 — 研讨主题编号
+============================================
+HIRO 2026 投稿邮件模板 / Submission Template
+============================================
+
+【邮件标题 / Subject】
+[HIRO 2026 投稿] 作品标题 — 展示方式 — 主题编号
+
+示例 / Example:
+[HIRO 2026 Submission] My Work Title — Oral / Poster / Proceedings Only — H01
+
+展示方式选项 / Presentation Format:
+  - 口头汇报 / Oral
+  - 展板 / Poster  
+  - 仅投稿论文集 / Proceedings Only
+  （口头汇报与展板可同时选择 / Oral and Poster may both be selected）
+
+主题编号 / Theme Code:
+  - H01: 篠泽广跨学科研究（学术交流）/ Academic Exchange
+  - H02: 篠泽广文学创作（同人文与创意写作）/ Fan Fiction & Creative Writing
+  - H03: 篠泽广美学鉴赏（同人图创作）/ Aesthetic Appreciation (Fan Art)
+  - H04: 其他形式创作 / Other Creative Formats
+
+============================================
+
+【邮件正文 / Email Body】
 
 尊敬的篠泽实验室组委会：
 
-[在此填写您的投稿说明、作品简介或论文摘要]
+1. 投稿人名称 / Submitter Name（建议使用制作人名义 / Producer name recommended）：
+   
 
-投稿人：XXX
-联系方式：XXX
-投稿日期：2026年XX月XX日
+2. 常用联系方式 / Contact Information（QQ、微信、邮箱等，多个请注明首选 / indicate preferred method）：
 
----
-注意事项：
+   
+3. 投稿类别 / Submission Category（论文摘要 / 同人图 / 同人文 / 其他 / Paper / Fan Art / Fan Fiction / Other）：
+
+   
+4. 作品标题 / Work Title：
+
+   
+5. 作品简介 / Brief Description（100字以内 / within 100 words）：
+
+   
+
+6. 展示方式 / Presentation Format（口头汇报 / 展板 / 仅论文集 / Oral / Poster / Proceedings Only）：
+
+   
+
+7. 特殊说明 / Special Notes（若作品涉及其他角色、跨作品元素或特殊设定，请在此说明 / If your work involves other characters, crossovers, or special settings, please explain）：
+
+   
+
+8. 投稿日期 / Submission Date：2026年____月____日
+
+9. 附件 / Attachments：
+   - 论文摘要/全文 / Paper/Abstract: [文件名]
+   - 图像作品 / Images: [文件名]
+   - 同人文全文 / Fan Fiction: [文件名]
+   - 展板文件（A4/A3, 300dpi）/ Poster file: [文件名]
+
+============================================
+注意事项 / Notes：
 1. 展示方式可选：口头汇报（Oral）/ 展板（Poster）/ 仅论文集（Proceedings Only）
 2. 研讨主题编号：H01（学术研究）、H02（视觉创作）、H03（文字创作）、H04（其他）
 3. 如有多个联系方式，请注明首选方式
+============================================
+投稿邮箱 / Submission Email: hirolab_hiro2026@163.com
+会议网站 / Conference Website: https://idol-master.top/hiro2026.html
+============================================

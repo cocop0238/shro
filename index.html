@@ -85,7 +85,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 /* Banner */
-.banner { position: relative; background: #000 url("assets/banner.png") center/auto 100% no-repeat; overflow: hidden; }
+.banner { position: relative; background: #000 url("assets/banner.png") center/cover no-repeat; overflow: hidden; }
 .banner::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.20) 50%, rgba(0,0,0,0.05) 100%); pointer-events: none; z-index: 0; }
 .banner-inner { max-width: var(--max-width); margin: 0 auto; padding: 60px 20px; position: relative; z-index: 1; display: flex; align-items: center; gap: 40px; }
 .banner-text { flex: 1; }
@@ -411,7 +411,7 @@ const I18N = {
     bannerSlogan: '—— 每一种可能性，都值得一次尝试。——',
     breadcrumbHome: '首页',
     welcomeH2: '欢迎参加 HIRO 2026',
-    welcomeP1: '第一届篠泽广国际研讨会（HIRO 2026）由篠泽实验室主办。HIRO 2026 将于<strong>2026年12月20日</strong>举行，这一天我们将通过学术交流、艺术展览与集体庆典，共同庆祝篠泽广的多元魅力。',
+    welcomeP1: '第一届篠泽广国际研讨会（HIRO 2026）由篠泽实验室主办，会议组委会负责会议的组织与协调工作。HIRO 2026 将于<strong>2026年12月20日</strong>举行，这一天我们将通过学术交流、艺术展览与集体庆典，共同庆祝篠泽广的多元魅力。',
     welcomeP2: '本次首届研讨会具有特殊意义：12月21日是篠泽广的生日，我们将在会议现场为篠泽广共同庆祝生日。我们诚挚邀请来自各领域的学者、艺术家、爱好者与追随者齐聚一堂，分享他们受篠泽广启发、或以篠泽广为主题创作的作品。',
     aboutH2: '关于 HIRO 2026',
     aboutP1: 'HIRO 2026 是一场独特的混合型活动，兼具学术研讨会与生日庆典的双重属性。与传统的学术会议一样，我们欢迎正式的投稿——研究论文、摘要以及技术报告。但与此同时，我们也热烈欢迎各种形式的作品：插画、漫画、同人文，以及与篠泽广这一角色及其世界相关的任何创意表达。',
@@ -424,7 +424,7 @@ const I18N = {
     callNote: '<strong>重要提示：</strong>对于同人创作以及其他形式投稿，作品必须<em>强烈且直接地</em>与篠泽广本人相关，一般情况下，仅允许偶像大师系列角色出现在作品中。我们建议各位采用制作人名称进行投稿，如果可以，我们希望能够收录您的论文全文以供与会人员交流讨论。',
     callFormatH3: '展示形式',
     callFormatOral: '<strong>口头汇报（Oral Presentation）：</strong>在研讨会现场进行 8–10 分钟的主题报告。名额按投稿顺序优先安排；如报名人数较多，组委会保留调整汇报时长的权利。选择口头汇报即默认同意将作品收录于会议论文集。<strong>在日程允许的情况下，口头汇报亦可通过线上会议远程参与；本次研讨会将同步进行网络直播。</strong>',
-    callFormatPoster: '<strong>展板（Poster）：</strong>您的作品将由组委会统一印刷并布置于会场展示区域，印刷费用由组委会承担。投稿文件须为 <strong>A4 大小、300 dpi</strong>。请投稿人根据所展示内容自行进行一定程度的美工设计与排版处理，以确保展板的视觉效果。选择展板展示即默认同意将作品收录于会议论文集。',
+    callFormatPoster: '<strong>展板（Poster）：</strong>您的作品将由组委会统一印刷并布置于会场展示区域，印刷费用由组委会承担。投稿文件须为 <strong>A3/A4 大小、300 dpi</strong>。请投稿人根据所展示内容自行进行一定程度的美工设计与排版处理，以确保展板的视觉效果。选择展板展示即默认同意将作品收录于会议论文集。',
     callFormatNote: '<strong>仅投稿论文集（Proceedings Only）：</strong>如不参与口头汇报或展板展示，可选择仅将作品收录于会议论文集，供投稿人与注册参会者留存。',
     themesH2: '研讨主题',
     themesIntro: '本次研讨会主题统一在“篠泽广”之下。',
@@ -461,8 +461,8 @@ const I18N = {
     guideP2: '<strong>邮件标题格式：</strong>[HIRO 2026 投稿] 作品标题 — 展示方式（口头汇报 / 展板 / 仅论文集）— 研讨主题编号（H01–H04）。如不选择口头汇报或展板，选择仅投稿论文集。',
     guideP3: '<strong>邮件正文：</strong>请附上您的常用联系方式（如 QQ、微信、电子邮箱等），以便组委会在录用后及时与您取得联系。如有多个联系方式，请注明首选方式。',
     guideP4: '📎 请下载<a href="assets/email_template.txt" download>邮件投稿模板</a>，按模板中的格式准备投稿邮件。',
-    guideSpecPaper: '<strong>论文 / 摘要投稿规范：</strong>摘要建议 300–500 字；完整论文建议 4–8 页（含图表与参考文献）。中、英、日文均可。投稿文件请以 PDF 格式提交。',
-    guideSpecArt: '<strong>插图 / 视觉作品投稿规范：</strong>作品尺寸为 2000×2000px（1:1）或 1080×1920px（9:16），分辨率 300 dpi，颜色模式为 RGB，格式为 PNG 或 JPG。可直接提交完整贺图，图中可附加角色名、画师署名或随笔等轻量文字。',
+    guideSpecPaper: '<strong>论文 / 摘要投稿规范：</strong>摘要建议 300–500 字；完整论文建议 4–8 页（含图表与参考文献）。中、英、日文均可。投稿文件请以 DOCX/DOC 与 PDF 格式提交。',
+    guideSpecArt: '<strong>插图 / 视觉作品投稿规范：</strong>作品尺寸为 2000×2000px（1:1）或 1080×1920px（9:16），分辨率 300 dpi，颜色模式为 RGB，格式为 PNG 或 JPG。可直接提交完整贺图，可附加角色名、画师署名或随笔等轻量文字以便论文集进行打印排版。',
     footerDesc: '第一届篠泽广国际研讨会',
     footerLinks: '快速链接',
     footerCopy: '版权所有 \u00a9 2026 篠泽实验室。保留所有权利。'
@@ -499,7 +499,7 @@ const I18N = {
     callNote: '<strong>Important:</strong> For fan works and other format submissions, the work must be <em>strongly and directly</em> related to Shinosawa Hiro. In general, only characters from <em>The Idolm@ster</em> series are permitted to appear in submissions. We recommend submitting under your producer name, and if possible, we would be delighted to include your full manuscript in the proceedings for attendees to share and discuss.',
     callFormatH3: 'Presentation Format',
     callFormatOral: '<strong>Oral Presentation:</strong> Deliver an 8\u201310 minute talk during the workshop session. Slots are allocated on a first-come, first-served basis; the committee reserves the right to adjust presentation length if demand exceeds capacity. By choosing oral presentation, you consent to having your work included in the workshop proceedings. <strong>Subject to scheduling, oral presentations may also be delivered remotely via video conference. The workshop will be livestreamed.</strong>',
-    callFormatPoster: '<strong>Poster:</strong> Your work will be printed and exhibited by the organising committee in the venue display area, at no cost to you. Submission files must be <strong>A4 size, 300 dpi</strong>. Authors are expected to design and lay out their poster content with appropriate artistic care to ensure visual quality. By choosing poster display, you consent to having your work included in the workshop proceedings.',
+    callFormatPoster: '<strong>Poster:</strong> Your work will be printed and exhibited by the organising committee in the venue display area, at no cost to you. Submission files must be <strong>A3/A4 size, 300 dpi</strong>. Authors are expected to design and lay out their poster content with appropriate artistic care to ensure visual quality. By choosing poster display, you consent to having your work included in the workshop proceedings.',
     callFormatNote: '<strong>Proceedings Only:</strong> If you do not wish to present orally or display a poster, you may choose to have your work included in the workshop proceedings, for the contributor and registered attendees to keep.',
     themesH2: 'Workshop Themes',
     themesIntro: 'The workshop is unified under the theme of Shinosawa Hiro.',
@@ -535,8 +535,8 @@ const I18N = {
     guideP2: '<strong>Email subject format:</strong> [HIRO 2026 Submission] Work Title — Presentation Format (Oral / Poster / Proceedings Only) — Theme Code (H01–H04). If not presenting orally or by poster, please select Proceedings Only.',
     guideP3: '<strong>Email body:</strong> Please include your preferred contact information (e.g. email, QQ, WeChat) so that the organising committee can reach you upon acceptance. If providing multiple contacts, please indicate your preferred method.',
     guideP4: '📎 Please download the <a href="assets/email_template.txt" download>email submission template</a> and prepare your submission email following the template format.',
-    guideSpecPaper: '<strong>Paper / Abstract Submission Guidelines:</strong> Abstract: 300–500 words recommended; full paper: 4–8 pages recommended (including figures and references). Submissions accepted in Chinese, English, or Japanese. Please submit in PDF format.',
-    guideSpecArt: '<strong>Illustration / Visual Art Submission Guidelines:</strong> Dimensions: 2000×2000px (1:1) or 1080×1920px (9:16), 300 dpi resolution, RGB colour mode, PNG or JPG format. Full celebratory artwork may be submitted directly, and may include light text such as character names, artist signatures, or short notes.',
+    guideSpecPaper: '<strong>Paper / Abstract Submission Guidelines:</strong> Abstract: 300–500 words recommended; full paper: 4–8 pages recommended (including figures and references). Submissions accepted in Chinese, English, or Japanese. Please submit in DOCX/DOC and PDF formats.',
+    guideSpecArt: '<strong>Illustration / Visual Art Submission Guidelines:</strong> Dimensions: 2000×2000px (1:1) or 1080×1920px (9:16), 300 dpi resolution, RGB colour mode, PNG or JPG format. Full celebratory artwork may be submitted directly, and may include light text such as character names, artist signatures, or short notes to facilitate typesetting for the proceedings.',
     footerDesc: 'The 1st International Workshop on Shinosawa Hiro',
     footerLinks: 'Quick Links',
     footerCopy: 'Copyright &copy; 2026 Hiro Laboratory. All Rights Reserved.'
