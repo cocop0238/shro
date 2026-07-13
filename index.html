@@ -226,7 +226,7 @@ html[lang="en"] .slogan-bar { font-family: 'Great Vibes', cursive; font-size: 1.
 #hiro-pet { background: url("assets/spritesheet.webp") 0 0 no-repeat; background-size: 1536px 1872px; }
 #hiro-pet.dragging { cursor: grabbing; }
 @media (max-width: 768px) {
-  #hiro-pet { width: 96px; height: 104px; bottom: 80px; right: 10px; }
+  #hiro-pet { width: 96px; height: 104px; bottom: 80px; right: 10px; background-size: 768px 936px; }
 }
 
 </style>
@@ -680,7 +680,8 @@ function copyToClipboard(text, btn) {
 var pet = document.getElementById('hiro-pet');
 if (!pet) return;
 
-var FRAME_W = 192, FRAME_H = 208;
+var FRAME_W = pet.offsetWidth, FRAME_H = pet.offsetHeight;
+
 var ACTION = {
   idle:  { row: 0, frames: 6, speed: 180 },
   right: { row: 1, frames: 8, speed: 70 },
@@ -691,7 +692,8 @@ var current = 'idle', frame = 0, timer = null;
 
 function drawFrame() {
   var act = ACTION[current];
-  pet.style.backgroundPosition = (-frame * FRAME_W) + 'px ' + (-act.row * FRAME_H) + 'px';
+  var fw = pet.offsetWidth, fh = pet.offsetHeight;
+  pet.style.backgroundPosition = (-frame * fw) + 'px ' + (-act.row * fh) + 'px';
 }
 function play(name) {
   if (current === name) return;
@@ -710,58 +712,56 @@ function play(name) {
 }
 play('idle');
 
-var dragging = false, ox = 0, oy = 0;
-pet.addEventListener('mousedown', function(e) {
+// Shared drag logic
+var dragging = false, ox = 0, oy = 0, lastX = 0;
+
+function dragStart(cx, cy) {
   dragging = true;
   pet.classList.add('dragging');
   var r = pet.getBoundingClientRect();
-  ox = e.clientX - r.left; oy = e.clientY - r.top;
+  ox = cx - r.left; oy = cy - r.top;
+  lastX = cx;
+  pet.style.right = 'auto';
+  pet.style.bottom = 'auto';
   pet.style.left = r.left + 'px';
   pet.style.top = r.top + 'px';
-});
-document.addEventListener('mousemove', function(e) {
+}
+function dragMove(cx, cy) {
   if (!dragging) return;
-  pet.style.left = (e.clientX - ox) + 'px';
-  pet.style.top = (e.clientY - oy) + 'px';
-  if (e.movementX > 1) play('right');
-  else if (e.movementX < -1) play('left');
-});
-document.addEventListener('mouseup', function() {
+  pet.style.left = (cx - ox) + 'px';
+  pet.style.top = (cy - oy) + 'px';
+  var dx = cx - lastX;
+  if (dx > 1) play('right');
+  else if (dx < -1) play('left');
+  lastX = cx;
+}
+function dragEnd() {
   if (!dragging) return;
   dragging = false;
   pet.classList.remove('dragging');
   play('idle');
-});
-pet.addEventListener('click', function() {
-  if (dragging) return;
-  play('click');
-});
+}
+
+// Mouse
+pet.addEventListener('mousedown', function(e) { dragStart(e.clientX, e.clientY); });
+document.addEventListener('mousemove', function(e) { dragMove(e.clientX, e.clientY); });
+document.addEventListener('mouseup', dragEnd);
+pet.addEventListener('click', function() { if (!dragging) play('click'); });
 
 // Touch
 pet.addEventListener('touchstart', function(e) {
   if (e.touches.length !== 1) return;
   e.preventDefault();
-  dragging = true;
-  pet.classList.add('dragging');
-  var r = pet.getBoundingClientRect();
-  ox = e.touches[0].clientX - r.left; oy = e.touches[0].clientY - r.top;
-  pet.style.left = r.left + 'px';
-  pet.style.top = r.top + 'px';
+  dragStart(e.touches[0].clientX, e.touches[0].clientY);
 }, {passive: false});
 document.addEventListener('touchmove', function(e) {
   if (!dragging) return;
-  var nx = e.touches[0].clientX - ox;
-  pet.style.left = nx + 'px';
-  pet.style.top = (e.touches[0].clientY - oy) + 'px';
-  if (e.touches[0].clientX - parseInt(pet.style.left) - ox > 1) play('right');
-  else if (e.touches[0].clientX - parseInt(pet.style.left) - ox < -1) play('left');
-});
-document.addEventListener('touchend', function() {
-  if (!dragging) return;
-  dragging = false;
-  pet.classList.remove('dragging');
-  play('idle');
-});
+  dragMove(e.touches[0].clientX, e.touches[0].clientY);
+}, {passive: false});
+document.addEventListener('touchend', dragEnd);
+
+// Handle resize
+window.addEventListener('resize', function() { drawFrame(); });
 })();
 </script>
 </body>
