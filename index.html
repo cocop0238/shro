@@ -209,6 +209,26 @@ html[lang="en"] .slogan-bar { font-family: 'Great Vibes', cursive; font-size: 1.
 .back-top { position: fixed; bottom: 30px; right: 30px; width: 44px; height: 44px; background: var(--color-primary); color: var(--color-white); border: none; border-radius: 50%; cursor: pointer; font-size: 20px; opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s; display: flex; align-items: center; justify-content: center; z-index: 999; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
 .back-top.visible { opacity: 1; visibility: visible; }
 .back-top:hover { background: var(--color-primary-dark); }
+
+/* Hiro Desk Pet */
+#hiro-pet {
+  position: fixed;
+  bottom: 120px;
+  right: 100px;
+  width: 192px;
+  height: 208px;
+  z-index: 999;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-drag: none;
+  image-rendering: auto;
+}
+#hiro-pet { background: url("assets/spritesheet.webp") 0 0 no-repeat; background-size: 1536px 1872px; }
+#hiro-pet.dragging { cursor: grabbing; }
+@media (max-width: 768px) {
+  #hiro-pet { width: 96px; height: 104px; bottom: 80px; right: 10px; }
+}
+
 </style>
 </head>
 <body>
@@ -651,6 +671,97 @@ function copyToClipboard(text, btn) {
     backTop.classList.toggle('visible', window.scrollY > 400);
   });
   backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+})();
+</script>
+<div id="hiro-pet" title="Hiro"></div>
+<script>
+// Hiro Desk Pet — standalone
+(function() {
+var pet = document.getElementById('hiro-pet');
+if (!pet) return;
+
+var FRAME_W = 192, FRAME_H = 208;
+var ACTION = {
+  idle:  { row: 0, frames: 6, speed: 180 },
+  right: { row: 1, frames: 8, speed: 70 },
+  left:  { row: 2, frames: 8, speed: 70 },
+  click: { row: 4, frames: 5, speed: 120, once: true }
+};
+var current = 'idle', frame = 0, timer = null;
+
+function drawFrame() {
+  var act = ACTION[current];
+  pet.style.backgroundPosition = (-frame * FRAME_W) + 'px ' + (-act.row * FRAME_H) + 'px';
+}
+function play(name) {
+  if (current === name) return;
+  current = name; frame = 0;
+  clearInterval(timer);
+  var act = ACTION[name];
+  drawFrame();
+  timer = setInterval(function() {
+    frame++;
+    if (frame >= act.frames) {
+      if (act.once) { play('idle'); return; }
+      else { frame = 0; }
+    }
+    drawFrame();
+  }, act.speed);
+}
+play('idle');
+
+var dragging = false, ox = 0, oy = 0;
+pet.addEventListener('mousedown', function(e) {
+  dragging = true;
+  pet.classList.add('dragging');
+  var r = pet.getBoundingClientRect();
+  ox = e.clientX - r.left; oy = e.clientY - r.top;
+  pet.style.left = r.left + 'px';
+  pet.style.top = r.top + 'px';
+});
+document.addEventListener('mousemove', function(e) {
+  if (!dragging) return;
+  pet.style.left = (e.clientX - ox) + 'px';
+  pet.style.top = (e.clientY - oy) + 'px';
+  if (e.movementX > 1) play('right');
+  else if (e.movementX < -1) play('left');
+});
+document.addEventListener('mouseup', function() {
+  if (!dragging) return;
+  dragging = false;
+  pet.classList.remove('dragging');
+  play('idle');
+});
+pet.addEventListener('click', function() {
+  if (dragging) return;
+  play('click');
+});
+
+// Touch
+pet.addEventListener('touchstart', function(e) {
+  if (e.touches.length !== 1) return;
+  e.preventDefault();
+  dragging = true;
+  pet.classList.add('dragging');
+  var r = pet.getBoundingClientRect();
+  ox = e.touches[0].clientX - r.left; oy = e.touches[0].clientY - r.top;
+  pet.style.left = r.left + 'px';
+  pet.style.top = r.top + 'px';
+}, {passive: false});
+document.addEventListener('touchmove', function(e) {
+  if (!dragging) return;
+  var nx = e.touches[0].clientX - ox;
+  pet.style.left = nx + 'px';
+  pet.style.top = (e.touches[0].clientY - oy) + 'px';
+  if (e.touches[0].clientX - parseInt(pet.style.left) - ox > 1) play('right');
+  else if (e.touches[0].clientX - parseInt(pet.style.left) - ox < -1) play('left');
+});
+document.addEventListener('touchend', function() {
+  if (!dragging) return;
+  dragging = false;
+  pet.classList.remove('dragging');
+  play('idle');
+});
 })();
 </script>
 </body>
