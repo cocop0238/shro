@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="450" viewBox="0 0 1900 450" role="img" aria-labelledby="title desc">
+  <title id="title">HIRO 2026 conference logo redesign</title>
+  <desc id="desc">A monochrome geometric logo with all visible lettering converted to vector paths.</desc>
+  <g id="emblem" aria-label="Hiro Shinozawa geometric side-profile emblem">
+    <path id="frame" d="M 40.50 30.50 L 409.50 30.50 L 409.50 399.50 L 40.50 399.50 Z" fill="none" stroke="#000000" stroke-width="8.20" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="outer-hair" d="M 155.30 83.80 L 266.00 63.30 L 356.20 112.50 L 384.90 399.50" fill="none" stroke="#000000" stroke-width="8.20" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="rear-hair" d="M 356.20 112.50 L 335.70 399.50" fill="none" stroke="#000000" stroke-width="6.56" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="inner-hair" d="M 302.90 128.90 L 298.80 399.50" fill="none" stroke="#000000" stroke-width="6.56" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="forehead" d="M 155.30 83.80 L 155.30 149.40 L 151.20 182.20" fill="none" stroke="#000000" stroke-width="6.56" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="nose" d="M 151.20 182.20 C 165.14 198.60, 143.82 218.28, 132.34 228.94" fill="none" stroke="#000000" stroke-width="6.56" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="nose-base" d="M 132.34 228.94 L 143.82 236.32" fill="none" stroke="#000000" stroke-width="6.56" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="jaw" d="M 143.00 254.36 L 179.90 297.00 L 229.10 297.00" fill="none" stroke="#000000" stroke-width="6.56" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="eye" d="M 175.80 178.10 L 204.50 178.10" fill="none" stroke="#000000" stroke-width="5.74" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="front-neck" d="M 229.10 297.00 L 253.70 399.50" fill="none" stroke="#000000" stroke-width="6.56" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="rear-neck" d="M 266.00 270.76 L 290.60 399.50" fill="none" stroke="#000000" stroke-width="6.56" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="front-hair" d="M 155.30 83.80 L 205.32 104.30" fill="none" stroke="#000000" stroke-width="6.56" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="diagonal-lock-main" d="M 339.80 55.10 L 175.80 399.50" fill="none" stroke="#000000" stroke-width="12.30" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="diagonal-lock-edge" d="M 372.60 83.80 L 220.90 399.50" fill="none" stroke="#000000" stroke-width="6.56" stroke-linecap="square" stroke-linejoin="miter"/>
+    <polygon id="hair-clip-1" points="212.70,100.20 225.00,79.70 251.24,95.28 238.94,116.60" fill="#000000"/>
+    <polygon id="hair-clip-2" points="249.60,121.52 261.90,101.02 288.14,116.60 275.84,137.92" fill="#000000"/>
+  </g>
+  <g id="wordmark" aria-label="HIRO">
+    <path id="wordmark-0" d="M 520.00 72.00 L 520.00 372.00" fill="none" stroke="#000000" stroke-width="15.00" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="wordmark-1" d="M 655.00 72.00 L 655.00 372.00" fill="none" stroke="#000000" stroke-width="15.00" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="wordmark-2" d="M 520.00 222.00 L 655.00 222.00" fill="none" stroke="#000000" stroke-width="15.00" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="wordmark-3" d="M 703.00 72.00 L 778.60 72.00" fill="none" stroke="#000000" stroke-width="15.00" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="wordmark-4" d="M 740.80 72.00 L 740.80 372.00" fill="none" stroke="#000000" stroke-width="15.00" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="wordmark-5" d="M 703.00 372.00 L 778.60 372.00" fill="none" stroke="#000000" stroke-width="15.00" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="wordmark-6" d="M 826.60 372.00 L 826.60 72.00 L 915.70 72.00 L 958.90 117.00 L 958.90 180.75 L 915.70 225.75 L 826.60 225.75" fill="none" stroke="#000000" stroke-width="15.00" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="wordmark-7" d="M 903.55 225.75 L 964.30 372.00" fill="none" stroke="#000000" stroke-width="15.00" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="wordmark-8" d="M 1044.70 72.00 L 1114.90 72.00 L 1147.30 124.50 L 1147.30 319.50 L 1114.90 372.00 L 1044.70 372.00 L 1012.30 319.50 L 1012.30 124.50 L 1044.70 72.00" fill="none" stroke="#000000" stroke-width="15.00" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+  <g id="year" aria-label="2026">
+    <path id="year-divider" d="M 1460.00 70.00 L 1460.00 382.00" fill="none" stroke="#000000" stroke-width="8.00" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="year-top-0" d="M 1510.00 93.12 L 1521.31 72.00 L 1545.82 72.00 L 1557.12 93.12 L 1557.12 120.75 L 1510.00 202.00 L 1557.12 202.00" fill="none" stroke="#000000" stroke-width="9.00" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="year-top-1" d="M 1596.43 72.00 L 1620.94 72.00 L 1632.25 94.75 L 1632.25 179.25 L 1620.94 202.00 L 1596.43 202.00 L 1585.12 179.25 L 1585.12 94.75 L 1596.43 72.00" fill="none" stroke="#000000" stroke-width="9.00" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="year-bottom-0" d="M 1510.00 261.12 L 1521.31 240.00 L 1545.82 240.00 L 1557.12 261.12 L 1557.12 288.75 L 1510.00 370.00 L 1557.12 370.00" fill="none" stroke="#000000" stroke-width="9.00" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="year-bottom-1" d="M 1628.48 254.62 L 1620.00 240.00 L 1598.32 240.00 L 1585.12 264.38 L 1585.12 345.62 L 1598.32 370.00 L 1619.06 370.00 L 1632.25 347.25 L 1632.25 322.88 L 1620.94 303.38 L 1585.12 303.38" fill="none" stroke="#000000" stroke-width="9.00" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+</svg>

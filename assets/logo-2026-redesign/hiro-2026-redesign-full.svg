@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="620" viewBox="0 0 1900 620" role="img" aria-labelledby="title desc">
+  <title id="title">HIRO 2026 conference logo redesign</title>
+  <desc id="desc">A monochrome geometric logo with all visible lettering converted to vector paths.</desc>
+  <g id="emblem" aria-label="Hiro Shinozawa geometric side-profile emblem">
+    <path id="frame" d="M 40.50 30.50 L 409.50 30.50 L 409.50 399.50 L 40.50 399.50 Z" fill="none" stroke="#000000" stroke-width="8.20" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="outer-hair" d="M 155.30 83.80 L 266.00 63.30 L 356.20 112.50 L 384.90 399.50" fill="none" stroke="#000000" stroke-width="8.20" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="rear-hair" d="M 356.20 112.50 L 335.70 399.50" fill="none" stroke="#000000" stroke-width="6.56" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="inner-hair" d="M 302.90 128.90 L 298.80 399.50" fill="none" stroke="#000000" stroke-width="6.56" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="forehead" d="M 155.30 83.80 L 155.30 149.40 L 151.20 182.20" fill="none" stroke="#000000" stroke-width="6.56" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="nose" d="M 151.20 182.20 C 165.14 198.60, 143.82 218.28, 132.34 228.94" fill="none" stroke="#000000" stroke-width="6.56" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="nose-base" d="M 132.34 228.94 L 143.82 236.32" fill="none" stroke="#000000" stroke-width="6.56" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="jaw" d="M 143.00 254.36 L 179.90 297.00 L 229.10 297.00" fill="none" stroke="#000000" stroke-width="6.56" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="eye" d="M 175.80 178.10 L 204.50 178.10" fill="none" stroke="#000000" stroke-width="5.74" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="front-neck" d="M 229.10 297.00 L 253.70 399.50" fill="none" stroke="#000000" stroke-width="6.56" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="rear-neck" d="M 266.00 270.76 L 290.60 399.50" fill="none" stroke="#000000" stroke-width="6.56" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="front-hair" d="M 155.30 83.80 L 205.32 104.30" fill="none" stroke="#000000" stroke-width="6.56" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="diagonal-lock-main" d="M 339.80 55.10 L 175.80 399.50" fill="none" stroke="#000000" stroke-width="12.30" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="diagonal-lock-edge" d="M 372.60 83.80 L 220.90 399.50" fill="none" stroke="#000000" stroke-width="6.56" stroke-linecap="square" stroke-linejoin="miter"/>
+    <polygon id="hair-clip-1" points="212.70,100.20 225.00,79.70 251.24,95.28 238.94,116.60" fill="#000000"/>
+    <polygon id="hair-clip-2" points="249.60,121.52 261.90,101.02 288.14,116.60 275.84,137.92" fill="#000000"/>
+  </g>
+  <g id="wordmark" aria-label="HIRO">
+    <path id="wordmark-0" d="M 520.00 72.00 L 520.00 372.00" fill="none" stroke="#000000" stroke-width="15.00" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="wordmark-1" d="M 655.00 72.00 L 655.00 372.00" fill="none" stroke="#000000" stroke-width="15.00" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="wordmark-2" d="M 520.00 222.00 L 655.00 222.00" fill="none" stroke="#000000" stroke-width="15.00" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="wordmark-3" d="M 703.00 72.00 L 778.60 72.00" fill="none" stroke="#000000" stroke-width="15.00" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="wordmark-4" d="M 740.80 72.00 L 740.80 372.00" fill="none" stroke="#000000" stroke-width="15.00" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="wordmark-5" d="M 703.00 372.00 L 778.60 372.00" fill="none" stroke="#000000" stroke-width="15.00" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="wordmark-6" d="M 826.60 372.00 L 826.60 72.00 L 915.70 72.00 L 958.90 117.00 L 958.90 180.75 L 915.70 225.75 L 826.60 225.75" fill="none" stroke="#000000" stroke-width="15.00" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="wordmark-7" d="M 903.55 225.75 L 964.30 372.00" fill="none" stroke="#000000" stroke-width="15.00" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="wordmark-8" d="M 1044.70 72.00 L 1114.90 72.00 L 1147.30 124.50 L 1147.30 319.50 L 1114.90 372.00 L 1044.70 372.00 L 1012.30 319.50 L 1012.30 124.50 L 1044.70 72.00" fill="none" stroke="#000000" stroke-width="15.00" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+  <g id="year" aria-label="2026">
+    <path id="year-divider" d="M 1460.00 70.00 L 1460.00 382.00" fill="none" stroke="#000000" stroke-width="8.00" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="year-top-0" d="M 1510.00 93.12 L 1521.31 72.00 L 1545.82 72.00 L 1557.12 93.12 L 1557.12 120.75 L 1510.00 202.00 L 1557.12 202.00" fill="none" stroke="#000000" stroke-width="9.00" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="year-top-1" d="M 1596.43 72.00 L 1620.94 72.00 L 1632.25 94.75 L 1632.25 179.25 L 1620.94 202.00 L 1596.43 202.00 L 1585.12 179.25 L 1585.12 94.75 L 1596.43 72.00" fill="none" stroke="#000000" stroke-width="9.00" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="year-bottom-0" d="M 1510.00 261.12 L 1521.31 240.00 L 1545.82 240.00 L 1557.12 261.12 L 1557.12 288.75 L 1510.00 370.00 L 1557.12 370.00" fill="none" stroke="#000000" stroke-width="9.00" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="year-bottom-1" d="M 1628.48 254.62 L 1620.00 240.00 L 1598.32 240.00 L 1585.12 264.38 L 1585.12 345.62 L 1598.32 370.00 L 1619.06 370.00 L 1632.25 347.25 L 1632.25 322.88 L 1620.94 303.38 L 1585.12 303.38" fill="none" stroke="#000000" stroke-width="9.00" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+  <g id="tagline" aria-label="EVERY POSSIBILITY IS WORTH A TRY">
+    <path id="tagline-0" d="M 65.23 515.00 L 48.00 515.00 L 48.00 573.00 L 65.23 573.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-1" d="M 48.00 544.00 L 60.92 544.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-2" d="M 111.07 515.00 L 120.86 573.00 L 130.65 515.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-3" d="M 193.72 515.00 L 176.50 515.00 L 176.50 573.00 L 193.72 573.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-4" d="M 176.50 544.00 L 189.42 544.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-5" d="M 239.57 573.00 L 239.57 515.00 L 252.49 515.00 L 258.75 523.70 L 258.75 536.02 L 252.49 544.73 L 239.57 544.73" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-6" d="M 250.73 544.73 L 259.54 573.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-7" d="M 305.38 515.00 L 315.17 542.55 L 324.96 515.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-8" d="M 315.17 542.55 L 315.17 573.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-9" d="M 395.17 573.00 L 395.17 515.00 L 408.09 515.00 L 413.96 523.70 L 413.96 536.02 L 408.09 544.73 L 395.17 544.73" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-10" d="M 464.51 515.00 L 474.68 515.00 L 479.38 525.15 L 479.38 562.85 L 474.68 573.00 L 464.51 573.00 L 459.81 562.85 L 459.81 525.15 L 464.51 515.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-11" d="M 544.02 522.25 L 539.91 515.00 L 529.54 515.00 L 525.23 522.98 L 525.23 538.56 L 529.54 544.00 L 539.72 544.00 L 544.02 550.16 L 544.02 565.02 L 539.72 573.00 L 529.14 573.00 L 525.23 565.75" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-12" d="M 608.66 522.25 L 604.55 515.00 L 594.18 515.00 L 589.87 522.98 L 589.87 538.56 L 594.18 544.00 L 604.36 544.00 L 608.66 550.16 L 608.66 565.02 L 604.36 573.00 L 593.78 573.00 L 589.87 565.75" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-13" d="M 654.51 515.00 L 665.47 515.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-14" d="M 659.99 515.00 L 659.99 573.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-15" d="M 654.51 573.00 L 665.47 573.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-16" d="M 711.32 515.00 L 711.32 573.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-17" d="M 711.32 515.00 L 724.24 515.00 L 730.11 523.70 L 730.11 535.66 L 724.24 543.27 L 711.32 543.27" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-18" d="M 711.32 544.73 L 724.63 544.73 L 730.11 552.70 L 730.11 565.02 L 724.63 573.00 L 711.32 573.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-19" d="M 775.96 515.00 L 786.92 515.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-20" d="M 781.44 515.00 L 781.44 573.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-21" d="M 775.96 573.00 L 786.92 573.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-22" d="M 832.77 515.00 L 832.77 573.00 L 849.99 573.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-23" d="M 895.84 515.00 L 906.80 515.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-24" d="M 901.32 515.00 L 901.32 573.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-25" d="M 895.84 573.00 L 906.80 573.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-26" d="M 952.65 515.00 L 972.23 515.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-27" d="M 962.44 515.00 L 962.44 573.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-28" d="M 1018.08 515.00 L 1027.86 542.55 L 1037.65 515.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-29" d="M 1027.86 542.55 L 1027.86 573.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-30" d="M 1107.86 515.00 L 1118.82 515.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-31" d="M 1113.34 515.00 L 1113.34 573.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-32" d="M 1107.86 573.00 L 1118.82 573.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-33" d="M 1183.46 522.25 L 1179.35 515.00 L 1168.97 515.00 L 1164.67 522.98 L 1164.67 538.56 L 1168.97 544.00 L 1179.15 544.00 L 1183.46 550.16 L 1183.46 565.02 L 1179.15 573.00 L 1168.58 573.00 L 1164.67 565.75" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-34" d="M 1253.67 515.00 L 1258.76 573.00 L 1266.39 544.73 L 1274.03 573.00 L 1279.11 515.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-35" d="M 1329.66 515.00 L 1339.84 515.00 L 1344.54 525.15 L 1344.54 562.85 L 1339.84 573.00 L 1329.66 573.00 L 1324.96 562.85 L 1324.96 525.15 L 1329.66 515.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-36" d="M 1390.39 573.00 L 1390.39 515.00 L 1403.30 515.00 L 1409.57 523.70 L 1409.57 536.02 L 1403.30 544.73 L 1390.39 544.73" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-37" d="M 1401.54 544.73 L 1410.35 573.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-38" d="M 1456.20 515.00 L 1475.77 515.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-39" d="M 1465.99 515.00 L 1465.99 573.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-40" d="M 1521.62 515.00 L 1521.62 573.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-41" d="M 1541.20 515.00 L 1541.20 573.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-42" d="M 1521.62 544.00 L 1541.20 544.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-43" d="M 1611.41 573.00 L 1621.19 515.00 L 1630.98 573.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-44" d="M 1615.71 550.52 L 1626.67 550.52" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-45" d="M 1701.19 515.00 L 1720.76 515.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-46" d="M 1710.98 515.00 L 1710.98 573.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-47" d="M 1766.61 573.00 L 1766.61 515.00 L 1779.53 515.00 L 1785.79 523.70 L 1785.79 536.02 L 1779.53 544.73 L 1766.61 544.73" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-48" d="M 1777.77 544.73 L 1786.58 573.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-49" d="M 1832.43 515.00 L 1842.21 542.55 L 1852.00 515.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path id="tagline-50" d="M 1842.21 542.55 L 1842.21 573.00" fill="none" stroke="#000000" stroke-width="5.50" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
+</svg>

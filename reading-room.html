@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HIRO 2026 — Reading Room</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=LXGW+WenKai:wght@400;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+
+:root {
+  --color-primary: #48C6DA;
+  --color-primary-dark: #2E9BB0;
+  --color-primary-light: #7CD8E7;
+  --color-primary-bg: #0E2740;
+  --color-gold: #FFD166;
+  --color-bg-0: #070D1A;
+  --color-bg-1: #0B1526;
+  --color-bg-2: #0F1F3A;
+  --color-text: #E8F1F8;
+  --color-text-dim: #9DB2C7;
+  --color-white: #FFFFFF;
+  --color-border: rgba(124,216,231,0.14);
+  --color-card: rgba(255,255,255,0.04);
+  --font-heading: 'LXGW WenKai', 'Georgia', 'Noto Serif SC', serif;
+  --font-body: 'Noto Sans SC', sans-serif;
+  --max-width: 1000px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: var(--font-body);
+  font-size: 15px; line-height: 1.75;
+  color: var(--color-text);
+  background: linear-gradient(160deg, var(--color-bg-0), var(--color-bg-1) 50%, var(--color-bg-2));
+  min-height: 100vh;
+}
+body::before {
+  content: ''; position: fixed; inset: 0; z-index: -1; opacity: 0.55; pointer-events: none;
+  background-image:
+    radial-gradient(1px 1px at 25px 35px, rgba(255,255,255,.85), transparent),
+    radial-gradient(1px 1px at 120px 80px, rgba(255,255,255,.5), transparent),
+    radial-gradient(1.5px 1.5px at 205px 130px, rgba(207,234,255,.9), transparent),
+    radial-gradient(1px 1px at 320px 45px, rgba(255,255,255,.45), transparent),
+    radial-gradient(1px 1px at 60px 205px, rgba(255,255,255,.55), transparent),
+    radial-gradient(1.2px 1.2px at 260px 220px, rgba(124,216,231,.6), transparent);
+  background-size: 380px 270px;
+  animation: twinkle 5s ease-in-out infinite alternate;
+}
+body::after {
+  content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(40% 45% at 85% -5%, rgba(72,198,218,.16), transparent 70%),
+              radial-gradient(35% 40% at 5% 30%, rgba(124,120,255,.12), transparent 70%),
+              radial-gradient(50% 45% at 50% 110%, rgba(255,209,102,.10), transparent 70%);
+}
+@keyframes twinkle { from { opacity: 0.4; } to { opacity: 0.75; } }
+a { color: var(--color-primary-light); text-decoration: none; }
+a:hover { color: var(--color-primary); }
+
+/* --- Header --- */
+.page-head {
+  background: rgba(7,13,26,.6);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--color-border);
+  padding: 12px 20px;
+  display: flex; align-items: center; justify-content: space-between;
+  position: sticky; top: 0; z-index: 100;
+}
+.page-head .logo { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--color-text-dim); }
+.page-head .logo img { width: 32px; height: 32px; filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(124,216,231,.55)); }
+.page-head .logo strong { color: #fff; font-size: 16px; letter-spacing: .08em; }
+.page-head .back-link { font-size: 14px; color: var(--color-primary-light); padding: 7px 16px; border: 1px solid rgba(124,216,231,.4); border-radius: 999px; transition: all .2s; }
+.page-head .back-link:hover { background: rgba(72,198,218,.14); }
+
+/* --- Progress Bar --- */
+.progress-wrap { max-width: var(--max-width); margin: 0 auto; padding: 26px 20px 0; }
+.progress-steps { display: flex; gap: 8px; }
+.progress-step {
+  flex: 1; text-align: center; padding: 12px 8px; border-radius: 12px;
+  font-size: 13px; font-weight: 500;
+  background: rgba(255,255,255,.04); border: 1px solid var(--color-border);
+  color: var(--color-text-dim); transition: all .35s;
+}
+.progress-step.active {
+  background: linear-gradient(135deg, rgba(72,198,218,.25), rgba(46,155,176,.15));
+  border-color: var(--color-primary); color: #fff;
+  box-shadow: 0 0 22px rgba(72,198,218,.25);
+}
+.progress-step.done { background: rgba(72,198,218,.1); border-color: rgba(72,198,218,.35); color: var(--color-primary-light); }
+.progress-step .step-num { font-size: 11px; opacity: .65; display: block; margin-bottom: 3px; letter-spacing: .18em; }
+
+/* --- Main Container --- */
+.main-wrap { max-width: var(--max-width); margin: 0 auto; padding: 34px 20px 70px; }
+
+/* --- Step Panels --- */
+.step-panel { display: none; }
+.step-panel.active { display: block; animation: fadeIn .45s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.step-title { font-family: var(--font-heading); font-size: 1.45rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.step-desc { color: var(--color-text-dim); margin-bottom: 28px; font-size: 14px; line-height: 1.7; }
+
+/* --- Step 1 --- */
+.step1-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+@media (max-width: 768px) { .step1-grid { grid-template-columns: 1fr; } }
+
+.paper-list { display: flex; flex-direction: column; gap: 10px; }
+.paper-card {
+  background: var(--color-card); border: 1px solid var(--color-border);
+  border-radius: 14px; padding: 15px 17px; display: flex; align-items: flex-start; gap: 12px;
+  cursor: pointer; transition: border-color .2s, box-shadow .2s, background .2s;
+}
+.paper-card:hover { border-color: rgba(124,216,231,.5); }
+.paper-card.selected { border-color: var(--color-primary); background: rgba(72,198,218,.1); box-shadow: 0 0 20px rgba(72,198,218,.18); }
+.paper-card .check-box {
+  width: 20px; height: 20px; border: 2px solid var(--color-border); border-radius: 6px;
+  flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+  font-size: 12px; color: transparent; transition: all .2s; margin-top: 2px;
+}
+.paper-card.selected .check-box { background: var(--color-primary); border-color: var(--color-primary); color: var(--color-bg-0); font-weight: 700; }
+.paper-card .paper-info { flex: 1; }
+.paper-card .paper-code { font-size: 11px; color: var(--color-primary-light); font-weight: 700; letter-spacing: .1em; margin-bottom: 3px; }
+.paper-card .paper-title { font-size: 14px; font-weight: 600; color: #fff; line-height: 1.5; }
+.paper-card .paper-kws { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 5px; }
+.paper-card .paper-kw { font-size: 11px; padding: 2px 9px; border-radius: 999px; background: rgba(255,255,255,.06); border: 1px solid var(--color-border); color: var(--color-text-dim); }
+
+.keyword-section h3 { font-size: 14px; color: var(--color-text); margin-bottom: 12px; }
+.kw-cloud { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.kw-tag {
+  padding: 7px 15px; border-radius: 999px; font-size: 13px;
+  background: var(--color-card); border: 1px solid var(--color-border);
+  color: var(--color-text-dim); cursor: pointer; transition: all .2s; user-select: none;
+}
+.kw-tag:hover { border-color: var(--color-primary); color: var(--color-primary-light); }
+.kw-tag.picked {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: var(--color-bg-0); border-color: var(--color-primary); font-weight: 700; order: -1;
+}
+
+.selected-kws {
+  min-height: 44px; padding: 10px; border: 2px dashed rgba(124,216,231,.3);
+  border-radius: 12px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+  margin-bottom: 14px; transition: all .2s;
+}
+.selected-kws.has-items { border-style: solid; border-color: rgba(124,216,231,.5); background: rgba(72,198,218,.06); }
+.selected-kws .placeholder-text { color: var(--color-text-dim); font-size: 13px; }
+.selected-kws .sel-tag {
+  padding: 6px 13px; border-radius: 999px; font-size: 13px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: var(--color-bg-0); font-weight: 600; display: flex; align-items: center; gap: 7px; cursor: grab;
+}
+.selected-kws .sel-tag .remove-btn { cursor: pointer; font-size: 14px; opacity: .7; font-weight: 700; }
+.selected-kws .sel-tag .remove-btn:hover { opacity: 1; }
+
+/* --- Buttons --- */
+.btn-row { margin-top: 26px; display: flex; gap: 12px; flex-wrap: wrap; }
+.btn {
+  padding: 11px 30px; border-radius: 999px; font-size: 15px; font-weight: 700;
+  font-family: var(--font-body); cursor: pointer; border: none;
+  transition: all .2s; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+}
+.btn-primary { background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark)); color: var(--color-bg-0); box-shadow: 0 6px 22px rgba(72,198,218,.3); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(72,198,218,.45); color: var(--color-bg-0); }
+.btn-primary:disabled { background: rgba(255,255,255,.08); color: var(--color-text-dim); cursor: not-allowed; box-shadow: none; transform: none; }
+.btn-outline { background: transparent; color: var(--color-primary-light); border: 1px solid rgba(124,216,231,.4); }
+.btn-outline:hover { background: rgba(72,198,218,.12); }
+
+/* --- Step 2: Matching --- */
+.match-loading { text-align: center; padding: 70px 20px; }
+.match-spinner {
+  width: 52px; height: 52px; border: 3px solid rgba(124,216,231,.15);
+  border-top-color: var(--color-primary); border-radius: 50%;
+  animation: spin .8s linear infinite; margin: 0 auto 22px; box-shadow: 0 0 24px rgba(72,198,218,.25);
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.match-loading .loading-text { color: var(--color-text-dim); font-size: 14px; }
+
+.match-result { text-align: center; animation: fadeIn .5s ease; }
+.match-result .match-badge {
+  display: inline-block; padding: 5px 14px; border-radius: 999px;
+  background: rgba(255,209,102,.12); border: 1px solid rgba(255,209,102,.4);
+  color: var(--color-gold); font-size: 12px; font-weight: 600; margin-bottom: 14px; letter-spacing: .08em;
+}
+.match-result .story-preview {
+  background: var(--color-card); border: 1px solid var(--color-primary);
+  border-radius: 18px; padding: 26px; max-width: 520px; margin: 20px auto;
+  box-shadow: 0 0 34px rgba(72,198,218,.15);
+}
+.match-result .story-preview h3 { font-family: var(--font-heading); font-size: 1.35rem; color: var(--color-primary-light); margin-bottom: 8px; }
+.match-result .story-preview .story-meta { font-size: 13px; color: var(--color-text-dim); }
+
+/* --- Step 3: Observation --- */
+.obs-card {
+  background: var(--color-card); border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-primary); border-radius: 16px;
+  padding: 26px 30px; max-width: 720px; margin: 20px auto;
+}
+.obs-card .obs-label {
+  font-size: 11px; font-weight: 700; color: var(--color-primary-light);
+  text-transform: uppercase; letter-spacing: .14em; margin-bottom: 14px;
+}
+.obs-card .obs-text {
+  font-family: var(--font-heading); font-size: 1.05rem; line-height: 2; color: var(--color-text);
+  white-space: pre-wrap;
+}
+.obs-card .obs-text .cursor-blink {
+  display: inline-block; width: 2px; height: 1.1em;
+  background: var(--color-primary); margin-left: 2px; vertical-align: text-bottom;
+  animation: blink .7s step-end infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+.obs-error {
+  background: rgba(197,48,48,.1); border: 1px solid rgba(254,178,178,.4);
+  border-radius: 14px; padding: 20px; text-align: center; color: #FCB5B5; font-size: 14px;
+}
+.obs-error button { margin-top: 12px; }
+
+/* --- Step 4: Read + Feedback --- */
+.story-header {
+  background: var(--color-card); border: 1px solid var(--color-border);
+  border-radius: 16px; padding: 22px 26px; margin-bottom: 24px;
+}
+.story-header .obs-context {
+  font-family: var(--font-heading); font-size: .95rem; color: var(--color-primary-light);
+  font-style: italic; line-height: 1.8; padding-bottom: 14px; margin-bottom: 14px;
+  border-bottom: 1px dashed rgba(124,216,231,.3);
+}
+.story-header .story-title-main { font-family: var(--font-heading); font-size: 1.35rem; font-weight: 700; color: #fff; }
+
+.story-content {
+  background: rgba(14,22,40,.75); border: 1px solid var(--color-border);
+  border-radius: 18px; padding: 36px 34px; margin-bottom: 34px;
+  box-shadow: 0 8px 40px rgba(0,0,0,.25);
+  font-family: var(--font-heading); line-height: 2.15; font-size: 16px;
+  white-space: pre-wrap; color: var(--color-text);
+}
+
+.feedback-section { text-align: center; padding: 20px 0 40px; }
+.feedback-section h3 { font-family: var(--font-heading); font-size: 1.15rem; color: #fff; margin-bottom: 22px; }
+.feedback-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.feedback-btn {
+  padding: 12px 32px; border-radius: 999px; font-size: 15px; font-weight: 700;
+  font-family: var(--font-body); cursor: pointer; border: none; transition: all .2s;
+}
+.feedback-like { background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark)); color: var(--color-bg-0); box-shadow: 0 6px 20px rgba(72,198,218,.3); }
+.feedback-like:hover { transform: translateY(-2px); }
+.feedback-retry { background: var(--color-card); color: var(--color-primary-light); border: 1px solid rgba(124,216,231,.4); }
+.feedback-retry:hover { background: rgba(72,198,218,.12); }
+.feedback-done { text-align: center; padding: 30px 0; animation: fadeIn .5s ease; }
+.feedback-done .done-icon { font-size: 48px; margin-bottom: 12px; }
+.feedback-done p { font-size: 15px; color: var(--color-text-dim); line-height: 1.9; }
+
+/* --- Art display --- */
+.art-display { text-align: center; margin: 24px 0; }
+.art-display img {
+  max-width: 100%; max-height: 380px; border-radius: 14px;
+  border: 1px solid var(--color-border); box-shadow: 0 8px 30px rgba(0,0,0,.35);
+}
+.art-display .art-credit { font-size: 12px; color: var(--color-text-dim); margin-top: 8px; }
+
+/* --- Paper selector dropdown --- */
+.paper-selector { position: relative; }
+.paper-selector-header {
+  padding: 13px 17px; border: 1px solid var(--color-border); border-radius: 12px;
+  cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+  background: var(--color-card); transition: border-color .2s;
+}
+.paper-selector-header:hover { border-color: var(--color-primary); }
+.selector-label { font-weight: 600; color: #fff; }
+.selector-count { font-size: 13px; color: var(--color-primary-light); background: rgba(72,198,218,.14); padding: 3px 11px; border-radius: 999px; }
+.paper-selector-dropdown {
+  position: absolute; top: calc(100% + 6px); left: 0; right: 0;
+  background: rgba(10,18,34,.97); backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border); border-radius: 14px; max-height: 340px;
+  overflow-y: auto; z-index: 20; box-shadow: 0 20px 50px rgba(0,0,0,.5);
+}
+.paper-option {
+  display: flex; align-items: flex-start; gap: 10px; padding: 12px 16px;
+  cursor: pointer; transition: background .15s; border-bottom: 1px solid rgba(124,216,231,.08);
+}
+.paper-option:last-child { border-bottom: none; }
+.paper-option:hover { background: rgba(72,198,218,.1); }
+.paper-option.selected { background: rgba(72,198,218,.12); }
+.paper-option .check-box {
+  width: 20px; height: 20px; border: 2px solid var(--color-border); border-radius: 6px;
+  flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+  font-size: 12px; color: transparent; margin-top: 1px;
+}
+.paper-option.selected .check-box { background: var(--color-primary); border-color: var(--color-primary); color: var(--color-bg-0); font-weight: 700; }
+.paper-option .paper-code { font-size: 11px; color: var(--color-primary-light); font-weight: 700; margin-bottom: 2px; }
+.paper-option .paper-title { font-size: 14px; color: #fff; line-height: 1.45; }
+
+.selected-papers { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
+.paper-tag-selected {
+  padding: 6px 13px; border-radius: 999px; font-size: 13px;
+  background: rgba(72,198,218,.12); color: var(--color-primary-light);
+  border: 1px solid rgba(124,216,231,.35); display: flex; align-items: center; gap: 7px;
+}
+.paper-tag-selected .remove-btn { cursor: pointer; font-weight: 700; opacity: .6; }
+.paper-tag-selected .remove-btn:hover { opacity: 1; }
+
+@media (max-width: 768px) {
+  .progress-step { font-size: 11px; padding: 9px 4px; }
+  .story-content { padding: 24px 18px; font-size: 15px; }
+  .obs-card { padding: 18px 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="page-head">
+  <div class="logo">
+    <img src="assets/logo-2026-redesign/hiro-2026-redesign-emblem.png" alt="">
+    <strong>HIRO 2026</strong> Reading Room
+  </div>
+  <a href="index.html" class="back-link">← 返回主页</a>
+</header>
+
+<!-- Progress Bar -->
+<div class="progress-wrap">
+  <div class="progress-steps">
+    <div class="progress-step active" id="prog1"><span class="step-num">STEP 1</span>选择论文与关键词</div>
+    <div class="progress-step" id="prog2"><span class="step-num">STEP 2</span>匹配同人文</div>
+    <div class="progress-step" id="prog3"><span class="step-num">STEP 3</span>生成观察报告</div>
+    <div class="progress-step" id="prog4"><span class="step-num">STEP 4</span>阅读与反馈</div>
+  </div>
+</div>
+
+<!-- Main -->
+<div class="main-wrap" id="main-wrap">
+
+  <!-- ============ STEP 1 ============ -->
+  <div class="step-panel active" id="step1">
+    <h2 class="step-title">📄 选择你感兴趣的论文</h2>
+    <p class="step-desc">从下方列表中选择吸引你的论文，并从右侧关键词池中挑选你认为重要的关键词并排序。这些选择将决定为你匹配哪篇同人文。</p>
+
+    <div class="step1-grid">
+      <!-- Papers -->
+      <div class="paper-list" id="paper-list"></div>
+
+      <!-- Keywords -->
+      <div class="keyword-section">
+        <h3>🏷 关键词（点击添加，拖拽排序）</h3>
+        <div class="selected-kws" id="selected-kws">
+          <span class="placeholder-text">点击下方关键词开始选择</span>
+        </div>
+        <div class="kw-cloud" id="kw-cloud"></div>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-primary" id="btn-step1-next" disabled>下一步：匹配同人文 →</button>
+    </div>
+  </div>
+
+  <!-- ============ STEP 2 ============ -->
+  <div class="step-panel" id="step2">
+    <div class="match-loading" id="match-loading">
+      <div class="match-spinner"></div>
+      <p class="loading-text">正在根据你的关键词匹配最相关的同人文……</p>
+    </div>
+    <div class="match-result" id="match-result" style="display:none;">
+      <div class="match-badge">✨ 匹配完成</div>
+      <div class="story-preview">
+        <h3 id="match-story-title"></h3>
+        <p class="story-meta" id="match-story-kws"></p>
+      </div>
+      <div class="art-display" id="match-art"></div>
+      <div class="btn-row" style="justify-content:center;">
+        <button class="btn btn-primary" id="btn-step2-next">生成观察报告 →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ STEP 3 ============ -->
+  <div class="step-panel" id="step3">
+    <h2 class="step-title">🔬 制作人观察报告</h2>
+    <p class="step-desc">基于你选择的关键词与匹配到的同人文，AI 生成了一份"制作人观察报告"。这是你阅读下一篇故事时将佩戴的"眼镜"。</p>
+
+    <div id="obs-container">
+      <div class="match-loading" id="obs-loading">
+        <div class="match-spinner"></div>
+        <p class="loading-text">正在生成观察报告……</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ STEP 4 ============ -->
+  <div class="step-panel" id="step4">
+    <div class="story-header">
+      <div class="obs-context" id="story-obs-context"></div>
+      <div class="story-title-main" id="story-title-display"></div>
+    </div>
+
+    <div class="story-content" id="story-content-display"></div>
+
+    <div class="art-display" id="story-art-display"></div>
+
+    <div class="feedback-section" id="feedback-section">
+      <h3>你是否喜欢这个视角下的这篇故事？</h3>
+      <div class="feedback-btns">
+        <button class="feedback-btn feedback-like" id="btn-like">👍 喜欢，保留这个视角</button>
+        <button class="feedback-btn feedback-retry" id="btn-retry">🔄 换一个视角</button>
+      </div>
+    </div>
+
+    <div class="feedback-done" id="feedback-done" style="display:none;">
+      <div class="done-icon">📝</div>
+      <p>感谢你的反馈。<br>你可以<strong>更换关键词</strong>探索新的视角，或<strong>返回主页</strong>继续浏览。</p>
+      <div class="btn-row" style="justify-content:center;">
+        <button class="btn btn-outline" id="btn-restart">重新开始</button>
+        <a href="index.html" class="btn btn-primary">返回主页</a>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /main-wrap -->
+
+<script src="reading-room-config.js"></script>
+<script src="h02/vectors.js"></script>
+<script src="reading-room-data.js"></script>
+<script>
+// ============================================================
+// State
+// ============================================================
+var state = {
+  currentStep: 1,
+  selectedPapers: [],    // paper ids
+  selectedKwIds: [],     // keyword ids in order
+  matchedStory: null,    // H02_STORIES item
+  observation: '',
+  liked: null
+};
+
+// ============================================================
+// UI helpers
+// ============================================================
+function showStep(n) {
+  state.currentStep = n;
+  document.querySelectorAll('.step-panel').forEach(function(p) { p.classList.remove('active'); });
+  var panel = document.getElementById('step' + n);
+  if (panel) panel.classList.add('active');
+
+  // Update progress
+  for (var i = 1; i <= 4; i++) {
+    var prog = document.getElementById('prog' + i);
+    prog.classList.remove('active', 'done');
+    if (i < n) prog.classList.add('done');
+    if (i === n) prog.classList.add('active');
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function $(id) { return document.getElementById(id); }
+
+// ============================================================
+// Step 1: Papers & Keywords
+// ============================================================
+function renderPapers() {
+  console.log('renderPapers H01_PAPERS:', H01_PAPERS.length);
+  var wrap = $('paper-dropdown-wrap');
+  console.log('wrap found:', !!wrap);
+  var selectedSet = new Set(state.selectedPapers);
+
+  var html = '<div class="paper-selector" id="paper-selector">' +
+    '<div class="paper-selector-header" id="paper-selector-header">' +
+      '<span class="selector-label">点击选择论文 ▼</span>' +
+      '<span class="selector-count">已选 ' + state.selectedPapers.length + ' 篇</span>' +
+    '</div>' +
+    '<div class="paper-selector-dropdown" id="paper-selector-dropdown" style="display:none;">' +
+      H01_PAPERS.map(function(p) {
+        var sel = selectedSet.has(p.id);
+        return '<div class="paper-option' + (sel ? ' selected' : '') + '" data-pid="' + p.id + '">' +
+          '<span class="check-box">' + (sel ? '✓' : '') + '</span>' +
+          '<div class="paper-info">' +
+            '<div class="paper-code">' + p.code + '</div>' +
+            '<div class="paper-title">' + p.title.zh + '</div>' +
+          '</div>' +
+        '</div>';
+      }).join('') +
+    '</div>' +
+  '</div>';
+  wrap.innerHTML = html;
+
+  // Toggle dropdown
+  $('paper-selector-header').addEventListener('click', function(e) {
+    e.stopPropagation();
+    var dd = $('paper-selector-dropdown');
+    dd.style.display = dd.style.display === 'none' ? 'block' : 'none';
+  });
+
+  // Option clicks
+  wrap.querySelectorAll('.paper-option').forEach(function(opt) {
+    opt.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var pid = opt.dataset.pid;
+      var idx = state.selectedPapers.indexOf(pid);
+      if (idx >= 0) { state.selectedPapers.splice(idx, 1); }
+      else { state.selectedPapers.push(pid); }
+      renderPapers();
+      renderSelectedPapers();
+      updateStep1Btn();
+    });
+  });
+
+  // Close dropdown on outside click (with debounce to avoid conflict)
+  document.addEventListener('click', function(e) {
+    var dd = $('paper-selector-dropdown');
+    var hdr = $('paper-selector-header');
+    if (dd && hdr && !hdr.contains(e.target) && !dd.contains(e.target)) {
+      dd.style.display = 'none';
+    }
+  });
+
+  renderSelectedPapers();
+}
+
+function renderSelectedPapers() {
+  var display = $('selected-papers-display');
+  if (state.selectedPapers.length === 0) {
+    display.innerHTML = '';
+    return;
+  }
+  display.innerHTML = state.selectedPapers.map(function(pid) {
+    var p = H01_PAPERS.find(function(pp) { return pp.id === pid; });
+    if (!p) return '';
+    return '<div class="paper-tag-selected">' +
+      p.code + ' ' + p.title.zh +
+      '<span class="remove-btn" data-pid="' + pid + '">×</span>' +
+    '</div>';
+  }).join('');
+
+  display.querySelectorAll('.remove-btn').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var pid = btn.dataset.pid;
+      var idx = state.selectedPapers.indexOf(pid);
+      if (idx >= 0) state.selectedPapers.splice(idx, 1);
+      renderPapers();
+      updateStep1Btn();
+    });
+  });
+}
+
+function renderKeywords() {
+  var cloud = $('kw-cloud');
+  var pickedSet = new Set(state.selectedKwIds);
+
+  cloud.innerHTML = KEYWORD_POOL.map(function(kw) {
+    var cls = pickedSet.has(kw.id) ? ' picked' : '';
+    return '<span class="kw-tag' + cls + '" data-kwid="' + kw.id + '">' + kw.zh + '</span>';
+  }).join('');
+
+  cloud.querySelectorAll('.kw-tag').forEach(function(tag) {
+    tag.addEventListener('click', function() {
+      var kwid = tag.dataset.kwid;
+      var idx = state.selectedKwIds.indexOf(kwid);
+      if (idx >= 0) {
+        state.selectedKwIds.splice(idx, 1);
+      } else {
+        state.selectedKwIds.push(kwid);
+      }
+      renderKeywords();
+      renderSelectedKws();
+      updateStep1Btn();
+    });
+  });
+}
+
+function renderSelectedKws() {
+  var container = $('selected-kws');
+  if (state.selectedKwIds.length === 0) {
+    container.innerHTML = '<span class="placeholder-text">点击下方关键词开始选择</span>';
+    container.classList.remove('has-items');
+    return;
+  }
+  container.classList.add('has-items');
+  container.innerHTML = state.selectedKwIds.map(function(kwid, idx) {
+    var kw = KEYWORD_POOL.find(function(k) { return k.id === kwid; });
+    var label = kw ? kw.zh : kwid;
+    return '<span class="sel-tag" draggable="true" data-kwid="' + kwid + '" data-idx="' + idx + '">' +
+      label + '<span class="remove-btn" data-kwid="' + kwid + '">×</span></span>';
+  }).join('');
+
+  // Remove button
+  container.querySelectorAll('.remove-btn').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var kwid = btn.dataset.kwid;
+      var idx = state.selectedKwIds.indexOf(kwid);
+      if (idx >= 0) state.selectedKwIds.splice(idx, 1);
+      renderKeywords();
+      renderSelectedKws();
+      updateStep1Btn();
+    });
+  });
+
+  // Drag and drop reordering
+  var dragSrcIdx = -1;
+  container.querySelectorAll('.sel-tag').forEach(function(tag) {
+    tag.addEventListener('dragstart', function(e) {
+      dragSrcIdx = parseInt(tag.dataset.idx);
+      e.dataTransfer.effectAllowed = 'move';
+    });
+    tag.addEventListener('dragover', function(e) {
+      e.preventDefault();
+      e.dataTransfer.dropEffect = 'move';
+    });
+    tag.addEventListener('drop', function(e) {
+      e.preventDefault();
+      var dstIdx = parseInt(tag.dataset.idx);
+      if (dragSrcIdx >= 0 && dragSrcIdx !== dstIdx) {
+        var item = state.selectedKwIds.splice(dragSrcIdx, 1)[0];
+        state.selectedKwIds.splice(dstIdx, 0, item);
+        renderSelectedKws();
+      }
+      dragSrcIdx = -1;
+    });
+  });
+}
+
+function updateStep1Btn() {
+  var btn = $('btn-step1-next');
+  btn.disabled = state.selectedPapers.length === 0 || state.selectedKwIds.length === 0;
+}
+
+// ============================================================
+// Step 2: Matching
+// ============================================================
+async function doMatch() {
+  showStep(2);
+  $('match-loading').style.display = 'block';
+  $('match-result').style.display = 'none';
+
+  setTimeout(async function() {
+    var results = await matchStories(state.selectedPapers, state.selectedKwIds);
+    if (results.length === 0) {
+      $('match-loading').innerHTML = '<p style="color:#C53030;">匹配失败，请返回重新选择。</p>';
+      return;
+    }
+
+    var best = results[0];
+    state.matchedMeta = best.meta;  // Store meta reference
+
+    $('match-story-title').textContent = best.meta.title.zh;
+    $('match-story-kws').textContent = '匹配度：' + Math.round(best.score * 100) + '%';
+
+    // Show art if available
+    var artEl = $('match-art');
+    if (best.meta.h03_id) {
+      var art = H03_ART.find(function(a) { return a.id === best.meta.h03_id; });
+      if (art) {
+        artEl.innerHTML = '<img src="' + art.image + '" alt="' + art.title.zh + '"><div class="art-credit">Illustration by ' + art.artist + '</div>';
+      } else { artEl.innerHTML = ''; }
+    } else { artEl.innerHTML = ''; }
+
+    $('match-loading').style.display = 'none';
+    $('match-result').style.display = 'block';
+  }, 1200);
+}
+
+// ============================================================
+// Step 3: AI Observation
+// ============================================================
+async function generateObservation() {
+  showStep(3);
+  $('obs-container').innerHTML = '<div class="match-loading" id="obs-loading"><div class="match-spinner"></div><p class="loading-text">正在生成观察报告……</p></div>';
+
+  var meta = state.matchedMeta;
+
+  // Collect paper titles and readable keyword names
+  var paperTitles = [];
+  var kwNames = [];
+  state.selectedPapers.forEach(function(pid) {
+    var p = H01_PAPERS.find(function(pp) { return pp.id === pid; });
+    if (p) {
+      paperTitles.push(p.title.zh);
+      kwNames = kwNames.concat(p.keywords);
+    }
+  });
+  state.selectedKwIds.forEach(function(kwid) {
+    var k = KEYWORD_POOL.find(function(kk) { return kk.id === kwid; });
+    if (k) kwNames.push(k.zh);
+  });
+  kwNames = [...new Set(kwNames)];
+
+  var prompt = [
+    '你是篠泽广的制作人（Producer）。',
+    '今天你阅读了以下论文：',
+    paperTitles.map(function(t, i) { return (i+1) + '. ' + t; }).join('\n'),
+    '',
+    '这些讨论围绕的关键词包括：' + kwNames.join('、') + '。',
+    '',
+    '请以"制作人观察报告"的格式，提出关于广的一个可能性。',
+    '',
+    '要求：',
+    '1. 基于这些论文与关键词，提出一个关于"广可能会怎样"的猜想。',
+    '2. 只提出可能性本身，不要编造场景或细节。',
+    '3. 以开放式问题收尾。',
+    '',
+    '格式参考：',
+    'Observation No.X',
+    '今天的讨论让制作人开始思考：',
+    '如果……，广会不会……？',
+    ,
+    '',
+    '60-100字。仅输出观察报告，不要额外说明。'
+  ].join('\n');
+
+  try {
+    var resp = await fetch(API_CONFIG.endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + API_CONFIG.apiKey
+      },
+      body: JSON.stringify({
+        model: API_CONFIG.model,
+        messages: [
+          { role: 'system', content: '你是篠泽广的制作人。你只提出关于广的"可能性"——不做多余描写，不编造场景。文字克制、简洁。请用中文输出。' },
+          { role: 'user', content: prompt }
+        ],
+        max_tokens: 400,
+        temperature: 0.7
+      })
+    });
+
+    if (!resp.ok) throw new Error('API error: ' + resp.status);
+
+    var data = await resp.json();
+    state.observation = data.choices[0].message.content.trim();
+
+    // Render with typewriter effect
+    renderObservation(state.observation);
+
+  } catch (err) {
+    console.error(err);
+    $('obs-container').innerHTML =
+      '<div class="obs-error">' +
+      '<p>⚠ 无法连接到 AI 服务生成观察报告。</p>' +
+      '<p style="font-size:12px;color:#999;margin-top:4px;">' + err.message + '</p>' +
+      '<p style="font-size:13px;margin-top:8px;">提示：请确认 API Key 已正确填入 <code>reading-room-data.js</code> 中。</p>' +
+      '<button class="btn btn-primary" onclick="generateObservation()">重试</button>' +
+      '<button class="btn btn-outline" style="margin-left:8px;" onclick="skipObservation()">跳过，直接阅读</button>' +
+      '</div>';
+  }
+}
+
+function renderObservation(text) {
+  var container = $('obs-container');
+  container.innerHTML =
+    '<div class="obs-card">' +
+    '<div class="obs-label">Producer Observation</div>' +
+    '<div class="obs-text" id="obs-text"></div>' +
+    '</div>' +
+    '<div class="btn-row" style="justify-content:center;">' +
+    '<button class="btn btn-primary" id="btn-step3-next">开始阅读 →</button>' +
+    '</div>';
+
+  // Typewriter effect
+  var el = $('obs-text');
+  var i = 0;
+  var speed = 35;
+  var cursor = document.createElement('span');
+  cursor.className = 'cursor-blink';
+  el.textContent = '';
+  el.appendChild(cursor);
+  function type() {
+    if (i < text.length) {
+      el.insertBefore(document.createTextNode(text.charAt(i)), cursor);
+      i++;
+      setTimeout(type, speed);
+    } else {
+      if (cursor.parentNode) cursor.remove();
+    }
+  }
+  type();
+
+  $('btn-step3-next').addEventListener('click', function() { showStory(); });
+}
+
+function skipObservation() {
+  state.observation = '今天，制作人没有特别的发现。\n但他知道，广的每一个可能性，都值得认真注视。\n带着这样的确信，他翻开了下一页。';
+  showStory();
+}
+
+// ============================================================
+// Step 4: Story & Feedback
+// ============================================================
+function showStory() {
+  showStep(4);
+  var meta = state.matchedMeta;
+
+  $('story-obs-context').textContent = state.observation;
+  $('story-title-display').textContent = '📖 ' + meta.title.zh;
+  $('story-content-display').textContent = getStoryContent(meta.file);
+
+  // Art
+  var artEl = $('story-art-display');
+  if (meta.h03_id) {
+    var art = H03_ART.find(function(a) { return a.id === meta.h03_id; });
+    if (art) {
+      artEl.innerHTML = '<img src="' + art.image + '" alt="' + art.title.zh + '" style="max-width:100%;max-height:300px;border-radius:10px;"><div class="art-credit">Illustration by ' + art.artist + '</div>';
+    } else { artEl.innerHTML = ''; }
+  } else { artEl.innerHTML = ''; }
+
+  // Feedback section
+  $('feedback-section').style.display = 'block';
+  $('feedback-done').style.display = 'none';
+}
+
+function handleLike() {
+  state.liked = true;
+  $('feedback-section').style.display = 'none';
+  $('feedback-done').style.display = 'block';
+  $('feedback-done').querySelector('.done-icon').textContent = '💙';
+  $('feedback-done').querySelector('p').innerHTML = '你保留了<strong>「' + state.matchedMeta.title.zh + '」</strong>的阅读视角。<br>它已存入你的阅读档案。';
+}
+
+function handleRetry() {
+  // Go back to step 1 but keep papers, just let user re-pick keywords
+  state.selectedKwIds = [];
+  state.matchedMeta = null;
+  state.observation = '';
+  state.liked = null;
+  renderKeywords();
+  renderSelectedKws();
+  updateStep1Btn();
+  showStep(1);
+}
+
+// ============================================================
+// Init
+// ============================================================
+
+// Step 1 button
+$('btn-step1-next').addEventListener('click', doMatch);
+
+// Step 2 button
+$('btn-step2-next').addEventListener('click', generateObservation);
+
+// Step 4 feedback buttons
+$('btn-like').addEventListener('click', handleLike);
+$('btn-retry').addEventListener('click', handleRetry);
+
+// Restart
+$('btn-restart').addEventListener('click', function() {
+  state.selectedPapers = [];
+  state.selectedKwIds = [];
+  state.matchedMeta = null;
+  state.observation = '';
+  state.liked = null;
+  renderPapers();
+  renderKeywords();
+  renderSelectedKws();
+  updateStep1Btn();
+  showStep(1);
+});
+
+// ============================================================
+// Init - async
+// ============================================================
+function initApp() {
+  console.log("initApp START, H01_PAPERS:", typeof H01_PAPERS, H01_PAPERS.length);
+  // Update step1 with dropdown (other steps are preserved in DOM)
+  var step1 = $('step1');
+  step1.innerHTML = '<h2 class="step-title">📄 选择你感兴趣的论文</h2>' +
+    '<p class="step-desc">从下拉列表中选择吸引你的论文（可多选），并从右侧关键词池中挑选你认为重要的关键词并排序。</p>' +
+    '<div class="step1-grid">' +
+      '<div class="paper-list"><div class="paper-dropdown-wrap" id="paper-dropdown-wrap"></div><div class="selected-papers" id="selected-papers-display"></div></div>' +
+      '<div class="keyword-section"><h3>🏷 关键词（点击添加，拖拽排序）</h3><div class="selected-kws" id="selected-kws"><span class="placeholder-text">点击下方关键词开始选择</span></div><div class="kw-cloud" id="kw-cloud"></div></div>' +
+    '</div>' +
+    '<div class="btn-row"><button class="btn btn-primary" id="btn-step1-next" disabled>下一步：匹配同人文 →</button></div>';
+  $('btn-step1-next').addEventListener('click', doMatch);
+
+  renderPapers();
+  renderKeywords();
+  renderSelectedKws();
+  updateStep1Btn();
+  showStep(1);
+}
+
+initApp();
+</script>
+</body>
+</html>
